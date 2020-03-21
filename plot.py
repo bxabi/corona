@@ -14,13 +14,13 @@ class CoronaPlot:
         self.loadCoronaData()
 
     def loadPopulation(self):
-        populationData = pd.read_csv('population.csv', '\t')
+        populationData = pd.read_csv('data/population.csv', '\t')
         for line in populationData.values:
             self.population[line[2].upper()] = line[77].replace(' ', '')
         self.population['SAN MARINO'] = 0
 
     def loadCoronaData(self):
-        alldata = pd.read_csv('COVID-19-geographic-distribution-worldwide.csv', '\t')
+        alldata = pd.read_excel('data/COVID-19-geographic-disbtribution-worldwide-2020-03-21.xlsx')
         for line in alldata.values:
             self.data.insert(0, {'date': line[0], 'newDeaths': line[5], 'country': line[6].upper().replace('_', ' ')})
 
@@ -64,38 +64,34 @@ class CoronaPlot:
             self.orderedCountries.append(self.mapView[i]['country'])
 
     def createPlots(self):
-        fig = px.line(self.data, x='date', y='newDeaths', color='country',
-                      title="Number of deaths / date / country",
-                      labels={"date": "Date", "newDeaths": "New Deaths",
-                              "country": "Countries in infection rate order"},
-                      category_orders={'country': self.orderedCountries})
-        fig.write_html("html/daily-deaths.html")
+        fig = px.line(self.data, x='date', y='newDeaths', color='country', title="Number of deaths / date / country",
+                      labels={"date": "Date", "newDeaths": "New Deaths", "country": "Country"},
+                      category_orders={'country': self.orderedCountries},
+                      color_discrete_sequence=px.colors.qualitative.Alphabet)
+        fig.write_html("generated/daily-deaths.html")
 
-        fig = px.line(self.data, x='date', y='total', color='country',
-                      title="Total deaths per country.",
-                      labels={"date": "Date", "total": "Total Deaths", "country": "Countries in infection rate order"},
-                      category_orders={'country': self.orderedCountries})
-        fig.write_html("html/total-deaths.html")
+        fig = px.line(self.data, x='date', y='total', color='country', title="Total deaths per country",
+                      labels={"date": "Date", "total": "Total Deaths", "country": "Country"},
+                      category_orders={'country': self.orderedCountries},
+                      color_discrete_sequence=px.colors.qualitative.Alphabet)
+        fig.write_html("generated/total-deaths.html")
 
         fig = px.line(self.data, x='date', y='perPopulation', color='country',
-                      title="% of population died.",
+                      title="% of population died",
                       labels={"date": "Date", "perPopulation": "Population %",
-                              "country": "Countries in infection rate order", 'oneIn': 'One In ... people'},
-                      category_orders={'country': self.orderedCountries},
-                      hover_data=['oneIn'])
-        fig.write_html("html/total-deaths-per-population.html")
+                              "country": "Country", 'oneIn': 'One In ... people',
+                              "total": "Total"},
+                      category_orders={'country': self.orderedCountries}, hover_data=['total', 'oneIn'],
+                      color_discrete_sequence=px.colors.qualitative.Alphabet)
+        fig.write_html("generated/total-deaths-per-population.html")
 
     def drawOnMap(self):
-        fig = px.choropleth(self.mapView,
-                            locations="country", locationmode="country names",
-                            color="perPopulation",
-                            hover_data=["total", "oneIn"],
-                            color_continuous_scale=px.colors.sequential.Plasma,
+        fig = px.choropleth(self.mapView, locations="country", locationmode="country names", color="perPopulation",
+                            hover_data=["total", "oneIn"], color_continuous_scale=px.colors.sequential.Plasma,
                             projection='orthographic',
-                            labels={"perPopulation": "Population %",
-                                    "country": "Country", 'oneIn': 'One In ... people', "total": "Total"},
-                            title="% of population died.")
-        fig.write_html("html/total-deaths-per-population-map.html")
+                            labels={"perPopulation": "Population %", "country": "Country", 'oneIn': 'One In ... people',
+                                    "total": "Total"}, title="% of population died")
+        fig.write_html("generated/total-deaths-per-population-map.html")
 
 
 if __name__ == '__main__':
