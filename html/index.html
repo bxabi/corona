@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Coronavirus charts</title>
+    <link rel="stylesheet" type="text/css" href="corona.css">
+    <script type="text/javascript">
+        function setActive(id) {
+            document.getElementById('l1').classList.remove("active");
+            document.getElementById('l2').classList.remove("active");
+            document.getElementById('l3').classList.remove("active");
+            document.getElementById('l4').classList.remove("active");
+
+            document.getElementById(id).classList.add("active");
+        }
+    </script>
+</head>
+<body>
+    <div align="center">
+        <a id="l1" class="active" onclick="getElementById('iframe').src='daily-deaths.html'; setActive('l1');">Daily Deaths</a>
+        <a id="l2" onclick="getElementById('iframe').src='total-deaths.html'; setActive('l2');">Total Deaths</a>
+        <a id="l3" onclick="getElementById('iframe').src='total-deaths-per-population.html'; setActive('l3');">Deaths as % of Population</a>
+        <a id="l4" onclick="getElementById('iframe').src='total-deaths-per-population-map.html'; setActive('l4');">Map of Deaths as % of Population</a>
+    </div>
+    <iframe id="iframe" src="total-deaths.html"/>
+</body>
+</html>
