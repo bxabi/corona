@@ -20,7 +20,7 @@ class CoronaPlot:
         self.population['SAN MARINO'] = 0
 
     def loadCoronaData(self):
-        alldata = pd.read_excel('data/COVID-19-geographic-disbtribution-worldwide-2020-03-21.xlsx')
+        alldata = pd.read_excel('data/COVID-19-geographic-disbtribution-worldwide-2020-03-22.xlsx')
         for line in alldata.values:
             self.data.insert(0, {'date': line[0], 'newDeaths': line[5], 'country': line[6].upper().replace('_', ' ')})
 
