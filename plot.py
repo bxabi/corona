@@ -68,13 +68,13 @@ class CoronaPlot:
                       labels={"date": "Date", "newDeaths": "New Deaths", "country": "Country"},
                       category_orders={'country': self.orderedCountries},
                       color_discrete_sequence=px.colors.qualitative.Alphabet)
-        fig.write_html("generated/daily-deaths.html")
+        fig.write_html("../Website/generated/daily-deaths.html")
 
         fig = px.line(self.data, x='date', y='total', color='country', title="Total deaths per country",
                       labels={"date": "Date", "total": "Total Deaths", "country": "Country"},
                       category_orders={'country': self.orderedCountries},
                       color_discrete_sequence=px.colors.qualitative.Alphabet)
-        fig.write_html("generated/total-deaths.html")
+        fig.write_html("../Website/generated/total-deaths.html")
 
         fig = px.line(self.data, x='date', y='perPopulation', color='country',
                       title="% of population died",
@@ -83,7 +83,7 @@ class CoronaPlot:
                               "total": "Total"},
                       category_orders={'country': self.orderedCountries}, hover_data=['total', 'oneIn'],
                       color_discrete_sequence=px.colors.qualitative.Alphabet)
-        fig.write_html("generated/total-deaths-per-population.html")
+        fig.write_html("../Website/generated/total-deaths-per-population.html")
 
     def drawOnMap(self):
         fig = px.choropleth(self.mapView, locations="country", locationmode="country names", color="perPopulation",
@@ -91,7 +91,7 @@ class CoronaPlot:
                             projection='orthographic',
                             labels={"perPopulation": "Population %", "country": "Country", 'oneIn': 'One In ... people',
                                     "total": "Total"}, title="% of population died")
-        fig.write_html("generated/total-deaths-per-population-map.html")
+        fig.write_html("../Website/generated/total-deaths-per-population-map.html")
 
 
 if __name__ == '__main__':
