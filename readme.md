@@ -1,3 +1,5 @@
+See the charts at https://bxabi.github.io
+
 Source of infection data:
 https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide
 
