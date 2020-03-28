@@ -17,10 +17,10 @@ class CoronaPlot:
         populationData = pd.read_csv('data/population.csv', '\t')
         for line in populationData.values:
             self.population[line[2].upper()] = line[77].replace(' ', '')
-        #self.population['SAN MARINO'] = 0
+        self.population['SAN MARINO'] = 0
 
     def loadCoronaData(self):
-        alldata = pd.read_csv('data/COVID-19-geographic-disbtribution-worldwide.csv', ',', encoding='latin-1')
+        alldata = pd.read_excel('data/COVID-19-worldwide.xlsx')
         for line in alldata.values:
             self.data.insert(0, {'date': line[0], 'newDeaths': line[5], 'country': line[6].upper().replace('_', ' ')})
 
