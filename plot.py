@@ -86,10 +86,12 @@ class CoronaPlot:
         fig.write_html("../Website/generated/total-deaths-per-population.html")
 
     def drawOnMap(self):
+        # temps, geyser, gray_r, burg
         fig = px.choropleth(self.mapView, locations="country", locationmode="country names", color="perPopulation",
-                            hover_data=["total", "oneIn"], color_continuous_scale=px.colors.sequential.Plasma,
+                            hover_data=["total", "oneIn"], color_continuous_scale='temps',
                             projection='orthographic',
-                            labels={"perPopulation": "Population %", "country": "Country", 'oneIn': 'One In ... people',
+                            labels={"perPopulation": "Population %", "country": "Country",
+                                    'oneIn': 'One In ... people',
                                     "total": "Total"}, title="% of population died")
         fig.write_html("../Website/generated/total-deaths-per-population-map.html")
 
