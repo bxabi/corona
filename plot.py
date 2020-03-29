@@ -22,7 +22,9 @@ class CoronaPlot:
     def loadCoronaData(self):
         alldata = pd.read_excel('data/COVID-19-worldwide.xlsx')
         for line in alldata.values:
-            self.data.insert(0, {'date': line[0], 'newDeaths': line[5], 'country': line[6].upper().replace('_', ' ')})
+            self.data.append({'date': line[0], 'newDeaths': line[5], 'country': line[6].upper().replace('_', ' '),
+                              'population': line[9]})
+        self.data.reverse()
 
         total = 0
         last = ''
@@ -36,6 +38,8 @@ class CoronaPlot:
                 else:
                     print("Population of " + last + " is not found.")
                     pop = 0
+                    # pop = current['population'] / 1000
+                # print(last + " - UN Population:" + str(pop) + ", WB population:" + str(current['population'] / 1000))
 
             total += current['newDeaths']
             current['total'] = total
