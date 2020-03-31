@@ -18,6 +18,7 @@ class CoronaPlot:
         for line in populationData.values:
             self.population[line[2].upper()] = line[77].replace(' ', '')
         self.population['SAN MARINO'] = 0
+        self.population['ANDORRA'] = 0
 
     def loadCoronaData(self):
         alldata = pd.read_excel('data/COVID-19-worldwide.xlsx')
@@ -46,6 +47,7 @@ class CoronaPlot:
             if pop > 0:
                 pp = total * 100 / (pop * 1000)
                 current['perPopulation'] = pp  # how many %
+                current['dailyPerPopulation'] = current['newDeaths'] * 100 / (pop * 1000)  # how many %
 
                 oneIn = 0
                 if total > 0:
@@ -54,7 +56,9 @@ class CoronaPlot:
 
                 # store the last value for the map view.
                 if index == len(self.data) - 1 or last != self.data[index + 1]['country']:
-                    self.mapView.append({'country': last, 'total': total, 'perPopulation': pp, 'oneIn': oneIn})
+                    infectionRate = current['newDeaths'] * 100 / (pop * 1000)
+                    self.mapView.append({'country': last, 'total': total, 'perPopulation': pp, 'oneIn': oneIn,
+                                         'lastDay': current['newDeaths'], 'lastInfectionRate': infectionRate})
 
             else:
                 current['perPopulation'] = 0
@@ -73,6 +77,15 @@ class CoronaPlot:
                       category_orders={'country': self.orderedCountries},
                       color_discrete_sequence=px.colors.qualitative.Alphabet)
         fig.write_html("../Website/generated/daily-deaths.html")
+
+        fig = px.line(self.data, x='date', y='dailyPerPopulation', color='country',
+                      title="Deaths / popluation / date / country",
+                      labels={"date": "Date", "newDeaths": "New Deaths", "country": "Country",
+                              "dailyPerPopulation": "New deaths per population"},
+                      category_orders={'country': self.orderedCountries},
+                      color_discrete_sequence=px.colors.qualitative.Alphabet,
+                      hover_data=["newDeaths"])
+        fig.write_html("../Website/generated/daily-deaths-per-population.html")
 
         fig = px.line(self.data, x='date', y='total', color='country', title="Total deaths per country",
                       labels={"date": "Date", "total": "Total Deaths", "country": "Country"},
@@ -98,6 +111,14 @@ class CoronaPlot:
                                     'oneIn': 'One In ... people',
                                     "total": "Total"}, title="% of population died")
         fig.write_html("../Website/generated/total-deaths-per-population-map.html")
+
+        fig = px.choropleth(self.mapView, locations="country", locationmode="country names", color="lastInfectionRate",
+                            hover_data=["lastDay"], color_continuous_scale='temps',
+                            projection='orthographic',
+                            labels={"lastInfectionRate": "% of population died on the last day", "country": "Country",
+                                    "lastDay": "Died on the last day"},
+                            title="% of population died on the last day - Presumably correlated to infection rate 2-3 weeks ago")
+        fig.write_html("../Website/generated/infection-rate.html")
 
 
 if __name__ == '__main__':
