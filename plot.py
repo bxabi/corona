@@ -21,6 +21,8 @@ class CoronaPlot:
         self.population['ANDORRA'] = 0
         self.population['HOLY SEE'] = 0
         self.population['GIBRALTAR'] = 0
+        self.population['ISLE OF MAN'] = 0
+        self.population['Falkland Islands (Malvinas)'.upper()] = 0
 
     def loadCoronaData(self):
         alldata = pd.read_excel('data/COVID-19-worldwide.xlsx')
@@ -172,6 +174,7 @@ class CoronaPlot:
                                     "infectedLastDay": "Infected on the last day"},
                             title="% of population infected on the last day")
         fig.write_html("../Website/generated/cases-per-population-last-day-map.html")
+        # print(self.mapView)
 
 
 if __name__ == '__main__':
