@@ -16,13 +16,11 @@ class CoronaPlot:
     def loadPopulation(self):
         populationData = pd.read_csv('data/population.csv', '\t')
         for line in populationData.values:
-            self.population[line[2].upper()] = line[77].replace(' ', '')
-        self.population['SAN MARINO'] = 0
-        self.population['ANDORRA'] = 0
-        self.population['HOLY SEE'] = 0
-        self.population['GIBRALTAR'] = 0
-        self.population['ISLE OF MAN'] = 0
-        self.population['Falkland Islands (Malvinas)'.upper()] = 0
+            pop = int(line[77].replace(' ', ''))
+            if pop >= 100:
+                self.population[line[2].upper()] = pop
+            # else:
+            #     print("Too small population: " + line[2])
 
     def loadCoronaData(self):
         alldata = pd.read_excel('data/COVID-19-worldwide.xlsx')
@@ -34,7 +32,8 @@ class CoronaPlot:
         totalDeaths = 0
         totalCases = 0
         last = ''
-        for index in range(len(self.data)):
+        index = 0
+        while index < len(self.data):
             current = self.data[index]
             if current['country'] != last:  # data for a new country starts.
                 last = current['country']
@@ -77,10 +76,10 @@ class CoronaPlot:
                          'diedOneIn': diedOneIn, 'infectedOneIn': infectedOneIn,
                          'diedLastDay': current['newDeaths'], 'infectedLastDay': current['newCases'],
                          'deathRate': deathRate, 'infectionRate': infectionRate})
+                index = index + 1
 
-            # else:
-            # current['perPopulation'] = 0
-            # current['diedOneIn'] = 0
+            else:
+                self.data.__delitem__(index)
 
         def getPP(elem):
             return elem['deathsPerPopulation']
