@@ -139,6 +139,7 @@ class CoronaPlot:
         fig.write_html("../Website/generated/daily-cases-per-population.html")
 
     def drawOnMap(self):
+        #print(self.mapView)
         # temps, geyser, gray_r, burg
         fig = px.choropleth(self.mapView, locations="country", locationmode="country names",
                             color="deathsPerPopulation",
@@ -173,7 +174,6 @@ class CoronaPlot:
                                     "infectedLastDay": "Infected on the last day"},
                             title="% of population infected on the last day")
         fig.write_html("../Website/generated/cases-per-population-last-day-map.html")
-        # print(self.mapView)
 
 
 if __name__ == '__main__':
