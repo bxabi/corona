@@ -25,7 +25,7 @@ class CoronaPlot:
     def loadCoronaData(self):
         alldata = pd.read_excel('data/COVID-19-worldwide.xlsx')
         for line in alldata.values:
-            self.data.append({'date': line[0], 'newDeaths': line[5], 'country': line[10].upper().replace('_', ' '),
+            self.data.append({'date': line[0], 'newDeaths': line[5], 'country': line[6].upper().replace('_', ' '),
                               'population': line[9], 'newCases': line[4]})
         self.data.reverse()
 
