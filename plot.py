@@ -19,8 +19,9 @@ class CoronaPlot:
             pop = int(line[77].replace(' ', ''))
             if pop >= 100:
                 self.population[line[2].upper()] = pop
-            # else:
-            #     print("Too small population: " + line[2])
+            else:
+                self.population[line[2].upper()] = -1
+            #    print("Too small population: " + line[2])
 
     def loadCoronaData(self):
         alldata = pd.read_excel('data/COVID-19-worldwide.xlsx')
@@ -91,6 +92,8 @@ class CoronaPlot:
     def getPopulation(self, last):
         if last in self.population:
             pop = int(self.population[last])
+            if pop == -1:  # population too small
+                pop = 0
         else:
             print("Population of " + last + " is not found.")
             pop = 0
@@ -139,7 +142,7 @@ class CoronaPlot:
         fig.write_html("../Website/generated/daily-cases-per-population.html")
 
     def drawOnMap(self):
-        #print(self.mapView)
+        # print(self.mapView)
         # temps, geyser, gray_r, burg
         fig = px.choropleth(self.mapView, locations="country", locationmode="country names",
                             color="deathsPerPopulation",
