@@ -3,11 +3,6 @@ import pandas as pd
 
 from Generator import tools
 
-with open('data/admin1.geojson') as json_file:
-    admin1Geo = json.load(json_file)
-
-deathByState = pd.read_csv('data/germany-deaths-by-state.csv', ',')
-
 stateNames = {"BW": "Baden-Württemberg", "BY": "Bayern", "BE": "Berlin", "BB": "Brandenburg", "HB": "Bremen",
               "HH": "Hamburg", "HE": "Hessen", "NI": "Niedersachsen", "MV": "Mecklenburg-Vorpommern",
               "NW": "Nordrhein-Westfalen", "RP": "Rheinland-Pfalz", "SL": "Saarland", "SN": "Sachsen",
@@ -18,13 +13,28 @@ population = {"BW": 11069533, "BY": 13076721, "BE": 3644826, "BB": 2511917, "HB"
               "NW": 17932651, "RP": 4084844, "SL": 990509, "SN": 4077937,
               "ST": 2208321, "SH": 2896712, "TH": 2143145}
 
+with open('data/admin1.geojson') as json_file:
+    admin1Geo = json.load(json_file)
+
+csv = pd.read_csv('data/germany.csv', ',')
+
 totalDeaths = {}
-for column in deathByState.items():
+lastDayDeaths = {}
+totalCases = {}
+lastDayCases = {}
+for column in csv.items():
     short = column[0][3:5]
     if short in stateNames.keys():
+        state = stateNames[short]
         total = column[1].values[-1]
-        totalDeaths[stateNames[short]] = total
-        # print(state_map[short] + ": " + str(total))
+        last = total - column[1].values[-2]
+        t = column[0][6:]
+        if t == "cases":
+            totalCases[state] = total
+            lastDayCases[state] = last
+        else:
+            totalDeaths[state] = total
+            lastDayDeaths[state] = last
 
 mapView = []
 
@@ -39,7 +49,8 @@ def isInGermany(object):
     state = object["properties"]["name"]
     object["id"] = state
     if state in stateNames.values():
-        row = tools.getMapviewRow(state, 0, 0, 0, totalDeaths[state], getPopulation(state))
+        row = tools.getMapviewRow(state, lastDayDeaths[state], lastDayDeaths[state], totalCases[state],
+                                  totalDeaths[state], getPopulation(state))
         mapView.append(row)
         return True
     return False
