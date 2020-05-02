@@ -9,7 +9,7 @@ population = pd.read_csv("data/USA/usa-population.csv", "\t")
 with open('data/admin1.geojson') as json_file:
     admin1Geo = json.load(json_file)
 
-csv = pd.read_csv('data/USA/usa.csv', ',')
+csv = pd.read_csv('data/USA/us-states.csv', ',')
 
 totalDeaths = {}
 lastDayDeaths = {}
