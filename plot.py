@@ -1,7 +1,7 @@
 import plotly.express as px
 import json
 
-from Generator import world, germany
+from Generator import world, germany, usa
 
 
 class CoronaPlot:
@@ -90,14 +90,13 @@ class CoronaPlot:
                             title="% of population infected on the last day")
         fig.write_html("../Website/generated/cases-per-population-last-day-map.html")
 
-
     def loadWorld(self):
         with open('data/countries.geojson') as json_file:
             self.worldGeo = json.load(json_file)
 
         for object in self.worldGeo["features"]:
             x = object["properties"]["name"]
-            if x != "Germany":
+            if x != "Germany" and x != "United States of America":
                 object["id"] = x.upper()
 
 
@@ -108,43 +107,47 @@ if __name__ == '__main__':
     plot.data, plot.mapView, plot.orderedCountries = world.loadCoronaData()
 
     germanyView, germanyGeo = germany.loadCoronaData()
-
     for node in germanyGeo["features"]:
         plot.worldGeo["features"].append(node)
-
     for row in germanyView:
+        plot.mapView.append(row)
+
+    usaView, usaGeo = usa.loadCoronaData()
+    for node in usaGeo["features"]:
+        plot.worldGeo["features"].append(node)
+    for row in usaView:
         plot.mapView.append(row)
 
     plot.createPlots()
     plot.drawOnMap()
 
-#def testTheProjections():
+# def testTheProjections():
 # list=['equirectangular',
-        # 'mercator',
-        # 'orthographic',
-        # 'natural earth',
-        # 'kavrayskiy7',
-        # 'miller',
-        # 'robinson',
-        # 'eckert4',
-        # 'azimuthal equal area',
-        # 'azimuthal equidistant',
-        # 'conic equal area',
-        # 'conic conformal',
-        # 'conic equidistant',
-        # 'gnomonic',
-        # 'stereographic',
-        # 'mollweide',
-        # 'hammer',
-        # 'transverse mercator']
-        # for proj in list:
-        #     fig = px.choropleth(self.mapView,
-        #                         geojson=self.worldGeo, locationmode="geojson-id",
-        #                         # locationmode="country names",
-        #                         locations="region",
-        #                         color="deathsPerPopulation", hover_data=["totalDeaths", "diedOneIn"],
-        #                         color_continuous_scale='temps', projection=proj,
-        #                         labels={"deathsPerPopulation": "Population %", "country": "Country",
-        #                                 'diedOneIn': 'One In ... people',
-        #                                 "totalDeaths": "Total"}, title=proj+ " | % of population died")
-        #     fig.show()
+# 'mercator',
+# 'orthographic',
+# 'natural earth',
+# 'kavrayskiy7',
+# 'miller',
+# 'robinson',
+# 'eckert4',
+# 'azimuthal equal area',
+# 'azimuthal equidistant',
+# 'conic equal area',
+# 'conic conformal',
+# 'conic equidistant',
+# 'gnomonic',
+# 'stereographic',
+# 'mollweide',
+# 'hammer',
+# 'transverse mercator']
+# for proj in list:
+#     fig = px.choropleth(self.mapView,
+#                         geojson=self.worldGeo, locationmode="geojson-id",
+#                         # locationmode="country names",
+#                         locations="region",
+#                         color="deathsPerPopulation", hover_data=["totalDeaths", "diedOneIn"],
+#                         color_continuous_scale='temps', projection=proj,
+#                         labels={"deathsPerPopulation": "Population %", "country": "Country",
+#                                 'diedOneIn': 'One In ... people',
+#                                 "totalDeaths": "Total"}, title=proj+ " | % of population died")
+#     fig.show()

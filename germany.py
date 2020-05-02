@@ -16,7 +16,7 @@ population = {"BW": 11069533, "BY": 13076721, "BE": 3644826, "BB": 2511917, "HB"
 with open('data/admin1.geojson') as json_file:
     admin1Geo = json.load(json_file)
 
-csv = pd.read_csv('data/germany.csv', ',')
+csv = pd.read_csv('data/Germany/germany.csv', ',')
 
 totalDeaths = {}
 lastDayDeaths = {}
@@ -46,9 +46,13 @@ def getPopulation(state):
 
 
 def isInGermany(object):
+    country = object["properties"]["country"]
+    if country != "Germany":
+        return False
+
     state = object["properties"]["name"]
-    object["id"] = state
     if state in stateNames.values():
+        object["id"] = state
         row = tools.getMapviewRow(state, lastDayDeaths[state], lastDayDeaths[state], totalCases[state],
                                   totalDeaths[state], getPopulation(state))
         mapView.append(row)
