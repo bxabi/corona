@@ -1,7 +1,12 @@
-import plotly.express as px
 import json
+import os
+import sys
 
-from . import world, germany, usa
+import plotly.express as px
+
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+
+from Generator import world, germany, usa
 
 
 class CoronaPlot:
