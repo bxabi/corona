@@ -1,7 +1,7 @@
 import plotly.express as px
 import json
 
-from Generator import world, germany, usa
+from . import world, germany, usa
 
 
 class CoronaPlot:
