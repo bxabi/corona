@@ -16,7 +16,7 @@ population = {"BW": 11069533, "BY": 13076721, "BE": 3644826, "BB": 2511917, "HB"
 with open('data/admin1.geojson') as json_file:
     admin1Geo = json.load(json_file)
 
-csv = pd.read_csv('data/Germany/germany.csv', ',')
+csv = pd.read_csv('data/Germany/data.csv', ',')
 
 totalDeaths = {}
 lastDayDeaths = {}
