@@ -4,7 +4,11 @@ import sys
 
 import plotly.express as px
 
+<<<<<<< HEAD
 sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/..")
+=======
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
+>>>>>>> 7c1a358e2d3875245547c72890023f34cd0eed6f
 
 from Generator import world, germany, usa
 
