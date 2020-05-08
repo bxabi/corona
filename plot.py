@@ -6,7 +6,7 @@ import plotly.express as px
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
 
-from Generator import world, germany, usa
+from Generator import world, germany, usa, china
 
 
 class CoronaPlot:
@@ -101,7 +101,7 @@ class CoronaPlot:
 
         for object in self.worldGeo["features"]:
             x = object["properties"]["name"]
-            if x != "Germany" and x != "United States of America":
+            if x != "Germany" and x != "United States of America" and x != "China":
                 object["id"] = x.upper()
 
 
@@ -121,6 +121,12 @@ if __name__ == '__main__':
     for node in usaGeo["features"]:
         plot.worldGeo["features"].append(node)
     for row in usaView:
+        plot.mapView.append(row)
+
+    chinaView, chinaGeo = china.loadCoronaData()
+    for node in chinaGeo["features"]:
+        plot.worldGeo["features"].append(node)
+    for row in chinaView:
         plot.mapView.append(row)
 
     plot.createPlots()

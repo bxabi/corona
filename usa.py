@@ -43,7 +43,7 @@ def isInUsa(object):
     result = np.where(population.State.values == state)
     if result[0].size > 0:
         object["id"] = state
-        row = tools.getMapviewRow(state, lastDayDeaths[state], lastDayDeaths[state], totalCases[state],
+        row = tools.getMapviewRow(state, lastDayCases[state], lastDayDeaths[state], totalCases[state],
                                   totalDeaths[state], population.Population.values[result[0][0]])
         mapView.append(row)
         return True

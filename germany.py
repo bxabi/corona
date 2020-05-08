@@ -53,7 +53,7 @@ def isInGermany(object):
     state = object["properties"]["name"]
     if state in stateNames.values():
         object["id"] = state
-        row = tools.getMapviewRow(state, lastDayDeaths[state], lastDayDeaths[state], totalCases[state],
+        row = tools.getMapviewRow(state, lastDayCases[state], lastDayDeaths[state], totalCases[state],
                                   totalDeaths[state], getPopulation(state))
         mapView.append(row)
         return True
