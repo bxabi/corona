@@ -5,8 +5,7 @@ import sys
 import plotly.express as px
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
-
-from Generator import world, germany, usa, china
+from Generator import world, germany, usa, china  # , russia
 
 
 class CoronaPlot:
@@ -105,60 +104,31 @@ class CoronaPlot:
                 object["id"] = x.upper()
 
 
+def addToMap(view, geo):
+    global node, row
+    for node in geo["features"]:
+        plot.worldGeo["features"].append(node)
+    for row in view:
+        plot.mapView.append(row)
+
+
 if __name__ == '__main__':
     plot = CoronaPlot()
     plot.loadWorld()
 
     plot.data, plot.mapView, plot.orderedCountries = world.loadCoronaData()
 
-    germanyView, germanyGeo = germany.loadCoronaData()
-    for node in germanyGeo["features"]:
-        plot.worldGeo["features"].append(node)
-    for row in germanyView:
-        plot.mapView.append(row)
+    view, geo = germany.loadCoronaData()
+    addToMap(view, geo)
 
-    usaView, usaGeo = usa.loadCoronaData()
-    for node in usaGeo["features"]:
-        plot.worldGeo["features"].append(node)
-    for row in usaView:
-        plot.mapView.append(row)
+    view, geo = usa.loadCoronaData()
+    addToMap(view, geo)
 
-    chinaView, chinaGeo = china.loadCoronaData()
-    for node in chinaGeo["features"]:
-        plot.worldGeo["features"].append(node)
-    for row in chinaView:
-        plot.mapView.append(row)
+    view, geo = china.loadCoronaData()
+    addToMap(view, geo)
+
+    # view, geo = russia.loadCoronaData()
+    # addToMap(view, geo)
 
     plot.createPlots()
     plot.drawOnMap()
-
-# def testTheProjections():
-# list=['equirectangular',
-# 'mercator',
-# 'orthographic',
-# 'natural earth',
-# 'kavrayskiy7',
-# 'miller',
-# 'robinson',
-# 'eckert4',
-# 'azimuthal equal area',
-# 'azimuthal equidistant',
-# 'conic equal area',
-# 'conic conformal',
-# 'conic equidistant',
-# 'gnomonic',
-# 'stereographic',
-# 'mollweide',
-# 'hammer',
-# 'transverse mercator']
-# for proj in list:
-#     fig = px.choropleth(self.mapView,
-#                         geojson=self.worldGeo, locationmode="geojson-id",
-#                         # locationmode="country names",
-#                         locations="region",
-#                         color="deathsPerPopulation", hover_data=["totalDeaths", "diedOneIn"],
-#                         color_continuous_scale='temps', projection=proj,
-#                         labels={"deathsPerPopulation": "Population %", "country": "Country",
-#                                 'diedOneIn': 'One In ... people',
-#                                 "totalDeaths": "Total"}, title=proj+ " | % of population died")
-#     fig.show()

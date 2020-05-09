@@ -1,6 +1,5 @@
 import json
 import pandas as pd
-import numpy as np
 
 from Generator import tools
 
@@ -15,9 +14,9 @@ for row in provincesCsv.values:
     provinces[row[0]] = row[1]
     population[row[1]] = row[2] * 1000000
 
-with open('data/China/COVID-19_2020-05-07(CN-DATA)by_DXY.json') as json_file:
+with open('data/China/lastDay.json') as json_file:
     jsonLast = json.load(json_file)
-with open('data/China/COVID-19_2020-05-06(CN-DATA)by_DXY.json') as json_file:
+with open('data/China/prevDay.json') as json_file:
     jsonPrev = json.load(json_file)
 
 totalDeaths = {}
@@ -44,7 +43,6 @@ def hasChineseData(object):
         return False
 
     state = object["properties"]["name"]
-    # result = np.where(population.State.values == state)
     if state in population:
         pop = population[state]
         object["id"] = state
