@@ -5,7 +5,7 @@ import sys
 import plotly.express as px
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
-from Generator import world, germany, usa, china  # , russia
+from Generator import world, germany, usa, china, russia
 
 
 class CoronaPlot:
@@ -100,13 +100,59 @@ class CoronaPlot:
 
         for object in self.worldGeo["features"]:
             x = object["properties"]["name"]
-            if x != "Germany" and x != "United States of America" and x != "China":
+            if x != "Germany" and x != "United States of America" and x != "China" and x != "Russia":
                 object["id"] = x.upper()
+
+    # to test different projections.
+    # def testTheProjections(self):
+    #     list = ['equirectangular',
+    #             'mercator',
+    #             'orthographic',
+    #             'natural earth',
+    #             'kavrayskiy7',
+    #             'miller',
+    #             'robinson',
+    #             'eckert4',
+    #             'azimuthal equal area',
+    #             'azimuthal equidistant',
+    #             'conic equal area',
+    #             'conic conformal',
+    #             'conic equidistant',
+    #             'gnomonic',
+    #             'stereographic',
+    #             'mollweide',
+    #             'hammer',
+    #             'transverse mercator']
+    #     for proj in list:
+    #         fig = px.choropleth(self.mapView,
+    #                             geojson=self.worldGeo, locationmode="geojson-id",
+    #                             # locationmode="country names",
+    #                             locations="region",
+    #                             color="deathsPerPopulation", hover_data=["totalDeaths", "diedOneIn"],
+    #                             color_continuous_scale='temps', projection=proj,
+    #                             labels={"deathsPerPopulation": "Population %", "country": "Country",
+    #                                     'diedOneIn': 'One In ... people',
+    #                                     "totalDeaths": "Total"}, title=proj + " | % of population died")
+    #         fig.show()
+
+
+def simplify(node):
+    c = node["geometry"]["coordinates"][0]
+    i = len(c) - 2
+    count = 0
+    while i > 0:
+        del c[i]
+        i = i - 1
+        count = count + 1
+        if count == 2:  # keep every x'th element
+            i = i - 1
+            count = 0
 
 
 def addToMap(view, geo):
     global node, row
     for node in geo["features"]:
+        simplify(node)
         plot.worldGeo["features"].append(node)
     for row in view:
         plot.mapView.append(row)
@@ -127,8 +173,10 @@ if __name__ == '__main__':
     view, geo = china.loadCoronaData()
     addToMap(view, geo)
 
-    # view, geo = russia.loadCoronaData()
-    # addToMap(view, geo)
+    view, geo = russia.loadCoronaData()
+    addToMap(view, geo)
 
     plot.createPlots()
     plot.drawOnMap()
+
+    # plot.testTheProjections()
