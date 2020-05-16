@@ -5,7 +5,7 @@ import sys
 import plotly.express as px
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
-from Generator import world, germany, usa, china, russia
+from Generator import world, germany, usa, china, russia, italy
 
 
 class CoronaPlot:
@@ -100,7 +100,7 @@ class CoronaPlot:
 
         for object in self.worldGeo["features"]:
             x = object["properties"]["name"]
-            if x != "Germany" and x != "United States of America" and x != "China" and x != "Russia":
+            if x != "Germany" and x != "United States of America" and x != "China" and x != "Russia" and x != "Italy":
                 object["id"] = x.upper()
 
     # to test different projections.
@@ -149,10 +149,11 @@ def simplify(node):
             count = 0
 
 
-def addToMap(view, geo):
+def addToMap(view, geo, doSimplification=True):
     global node, row
     for node in geo["features"]:
-        simplify(node)
+        if doSimplification:
+            simplify(node)
         plot.worldGeo["features"].append(node)
     for row in view:
         plot.mapView.append(row)
@@ -165,7 +166,7 @@ if __name__ == '__main__':
     plot.data, plot.mapView, plot.orderedCountries = world.loadCoronaData()
 
     view, geo = germany.loadCoronaData()
-    addToMap(view, geo)
+    addToMap(view, geo, False)
 
     view, geo = usa.loadCoronaData()
     addToMap(view, geo)
@@ -175,6 +176,9 @@ if __name__ == '__main__':
 
     view, geo = russia.loadCoronaData()
     addToMap(view, geo)
+
+    view, geo = italy.loadCoronaData()
+    addToMap(view, geo, False)
 
     plot.createPlots()
     plot.drawOnMap()

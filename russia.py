@@ -44,7 +44,6 @@ def inRussia(object):
         return False
 
     state = object["properties"]["name"]
-    # result = np.where(population.State.values == state)
     if state in statesByName:
         pop = statesByName[state]["population"]
         object["id"] = state
