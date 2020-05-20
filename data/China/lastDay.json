@@ -2,10 +2,10 @@
     {
         "provinceName": "台湾",
         "provinceShortName": "台湾",
-        "currentConfirmedCount": 32,
+        "currentConfirmedCount": 31,
         "confirmedCount": 440,
         "suspectedCount": 348,
-        "curedCount": 401,
+        "curedCount": 402,
         "deadCount": 7,
         "comment": "",
         "locationId": 710000,
@@ -15,10 +15,10 @@
     {
         "provinceName": "香港",
         "provinceShortName": "香港",
-        "currentConfirmedCount": 26,
+        "currentConfirmedCount": 25,
         "confirmedCount": 1055,
         "suspectedCount": 47,
-        "curedCount": 1025,
+        "curedCount": 1026,
         "deadCount": 4,
         "comment": "疑似1例",
         "locationId": 810000,
@@ -28,10 +28,10 @@
     {
         "provinceName": "吉林省",
         "provinceShortName": "吉林",
-        "currentConfirmedCount": 26,
-        "confirmedCount": 151,
+        "currentConfirmedCount": 25,
+        "confirmedCount": 152,
         "suspectedCount": 19,
-        "curedCount": 123,
+        "curedCount": 125,
         "deadCount": 2,
         "comment": "",
         "locationId": 220000,
@@ -39,10 +39,10 @@
         "cities": [
             {
                 "cityName": "吉林市",
-                "currentConfirmedCount": 26,
-                "confirmedCount": 56,
+                "currentConfirmedCount": 25,
+                "confirmedCount": 57,
                 "suspectedCount": 12,
-                "curedCount": 29,
+                "curedCount": 31,
                 "deadCount": 1,
                 "locationId": 220200
             },
@@ -132,8 +132,8 @@
     {
         "provinceName": "内蒙古自治区",
         "provinceShortName": "内蒙古",
-        "currentConfirmedCount": 19,
-        "confirmedCount": 216,
+        "currentConfirmedCount": 20,
+        "confirmedCount": 217,
         "suspectedCount": 34,
         "curedCount": 196,
         "deadCount": 1,
@@ -143,8 +143,8 @@
         "cities": [
             {
                 "cityName": "境外输入人员",
-                "currentConfirmedCount": 18,
-                "confirmedCount": 139,
+                "currentConfirmedCount": 19,
+                "confirmedCount": 140,
                 "suspectedCount": 34,
                 "curedCount": 121,
                 "deadCount": 0,
@@ -254,10 +254,10 @@
     {
         "provinceName": "上海市",
         "provinceShortName": "上海",
-        "currentConfirmedCount": 17,
-        "confirmedCount": 666,
+        "currentConfirmedCount": 15,
+        "confirmedCount": 667,
         "suspectedCount": 300,
-        "curedCount": 642,
+        "curedCount": 645,
         "deadCount": 7,
         "comment": "因未公布分区死亡和治愈，仅展示累计确诊和现存确诊",
         "locationId": 310000,
@@ -265,17 +265,17 @@
         "cities": [
             {
                 "cityName": "境外输入",
-                "currentConfirmedCount": 16,
+                "currentConfirmedCount": 13,
                 "confirmedCount": 326,
                 "suspectedCount": 4,
-                "curedCount": 310,
+                "curedCount": 313,
                 "deadCount": 0,
                 "locationId": 0
             },
             {
                 "cityName": "外地来沪",
-                "currentConfirmedCount": 1,
-                "confirmedCount": 112,
+                "currentConfirmedCount": 2,
+                "confirmedCount": 113,
                 "suspectedCount": 0,
                 "curedCount": 110,
                 "deadCount": 1,
