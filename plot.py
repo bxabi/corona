@@ -159,14 +159,19 @@ def addToMap(view, geo, doSimplification=True):
         plot.mapView.append(row)
 
 
+def getPP(elem):
+    return elem['deathsPerPopulation']
+
+
 if __name__ == '__main__':
     plot = CoronaPlot()
     plot.loadWorld()
 
-    plot.data, plot.mapView, plot.orderedCountries = world.loadCoronaData()
+    plot.data, plot.mapView = world.loadCoronaData()
 
-    view, geo = germany.loadCoronaData()
+    view, geo, data = germany.loadCoronaData()
     addToMap(view, geo, False)
+    plot.data.extend(data)
 
     view, geo = usa.loadCoronaData()
     addToMap(view, geo)
@@ -179,6 +184,11 @@ if __name__ == '__main__':
 
     view, geo = italy.loadCoronaData()
     addToMap(view, geo, False)
+
+    plot.orderedCountries = []
+    plot.mapView.sort(key=getPP, reverse=True)
+    for i in range(0, len(plot.mapView) - 1):
+        plot.orderedCountries.append(plot.mapView[i]['region'])
 
     plot.createPlots()
     plot.drawOnMap()

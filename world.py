@@ -16,7 +16,6 @@ for line in populationData.values:
 def loadCoronaData():
     data = []
     mapView = []
-    orderedCountries = []
 
     alldata = pd.read_excel('data/COVID-19-worldwide.xlsx')
     for line in alldata.values:
@@ -61,14 +60,7 @@ def loadCoronaData():
         else:
             data.__delitem__(index)
 
-    def getPP(elem):
-        return elem['deathsPerPopulation']
-
-    mapView.sort(key=getPP, reverse=True)
-    for i in range(0, len(mapView) - 1):
-        orderedCountries.append(mapView[i]['region'])
-
-    return data, mapView, orderedCountries
+    return data, mapView
 
 
 def getPopulation(last):
