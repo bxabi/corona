@@ -3,9 +3,9 @@
         "provinceName": "香港",
         "provinceShortName": "香港",
         "currentConfirmedCount": 28,
-        "confirmedCount": 1065,
+        "confirmedCount": 1066,
         "suspectedCount": 47,
-        "curedCount": 1033,
+        "curedCount": 1034,
         "deadCount": 4,
         "comment": "疑似1例",
         "locationId": 810000,
@@ -15,10 +15,10 @@
     {
         "provinceName": "内蒙古自治区",
         "provinceShortName": "内蒙古",
-        "currentConfirmedCount": 27,
+        "currentConfirmedCount": 26,
         "confirmedCount": 232,
         "suspectedCount": 34,
-        "curedCount": 204,
+        "curedCount": 205,
         "deadCount": 1,
         "comment": "",
         "locationId": 150000,
@@ -26,10 +26,10 @@
         "cities": [
             {
                 "cityName": "境外输入人员",
-                "currentConfirmedCount": 27,
+                "currentConfirmedCount": 26,
                 "confirmedCount": 155,
                 "suspectedCount": 34,
-                "curedCount": 128,
+                "curedCount": 129,
                 "deadCount": 0,
                 "locationId": 0
             },
@@ -241,10 +241,10 @@
     {
         "provinceName": "台湾",
         "provinceShortName": "台湾",
-        "currentConfirmedCount": 18,
+        "currentConfirmedCount": 15,
         "confirmedCount": 441,
         "suspectedCount": 348,
-        "curedCount": 416,
+        "curedCount": 419,
         "deadCount": 7,
         "comment": "",
         "locationId": 710000,
@@ -254,10 +254,10 @@
     {
         "provinceName": "上海市",
         "provinceShortName": "上海",
-        "currentConfirmedCount": 9,
-        "confirmedCount": 669,
+        "currentConfirmedCount": 8,
+        "confirmedCount": 670,
         "suspectedCount": 300,
-        "curedCount": 653,
+        "curedCount": 655,
         "deadCount": 7,
         "comment": "因未公布分区死亡和治愈，仅展示累计确诊和现存确诊",
         "locationId": 310000,
@@ -266,18 +266,18 @@
             {
                 "cityName": "境外输入",
                 "currentConfirmedCount": 7,
-                "confirmedCount": 328,
+                "confirmedCount": 329,
                 "suspectedCount": 4,
-                "curedCount": 321,
+                "curedCount": 322,
                 "deadCount": 0,
                 "locationId": 0
             },
             {
                 "cityName": "外地来沪",
-                "currentConfirmedCount": 2,
+                "currentConfirmedCount": 1,
                 "confirmedCount": 113,
                 "suspectedCount": 0,
-                "curedCount": 110,
+                "curedCount": 111,
                 "deadCount": 1,
                 "locationId": 0
             },
@@ -430,10 +430,10 @@
     {
         "provinceName": "湖北省",
         "provinceShortName": "湖北",
-        "currentConfirmedCount": 6,
+        "currentConfirmedCount": 5,
         "confirmedCount": 68135,
         "suspectedCount": 0,
-        "curedCount": 63617,
+        "curedCount": 63618,
         "deadCount": 4512,
         "comment": "4.17 武汉市订正数据，武汉死亡核增1290，确诊核增325，治愈核减965",
         "locationId": 420000,
@@ -441,10 +441,10 @@
         "cities": [
             {
                 "cityName": "武汉",
-                "currentConfirmedCount": 6,
+                "currentConfirmedCount": 5,
                 "confirmedCount": 50340,
                 "suspectedCount": 0,
-                "curedCount": 46465,
+                "curedCount": 46466,
                 "deadCount": 3869,
                 "locationId": 420100
             },
