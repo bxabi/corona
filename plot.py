@@ -3,10 +3,10 @@ import os
 import sys
 
 import plotly.express as px
+import time
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
-from Generator import world, germany, usa, china, russia, italy
-
+from Generator import world, germany, usa, china, russia, italy, brazil
 
 class CoronaPlot:
     def createPlots(self):
@@ -100,7 +100,7 @@ class CoronaPlot:
 
         for object in self.worldGeo["features"]:
             x = object["properties"]["name"]
-            if x != "Germany" and x != "United States of America" and x != "China" and x != "Russia" and x != "Italy":
+            if x != "Germany" and x != "United States of America" and x != "China" and x != "Russia" and x != "Italy" and x != "Brazil":
                 object["id"] = x.upper()
 
     # to test different projections.
@@ -164,6 +164,8 @@ def getPP(elem):
 
 
 if __name__ == '__main__':
+    start_time = time.time()
+
     plot = CoronaPlot()
     plot.loadWorld()
 
@@ -185,6 +187,10 @@ if __name__ == '__main__':
     view, geo = italy.loadCoronaData()
     addToMap(view, geo, False)
 
+    view, geo, data = brazil.loadCoronaData()
+    addToMap(view, geo, False)
+    plot.data.extend(data)
+
     plot.orderedCountries = []
     plot.mapView.sort(key=getPP, reverse=True)
     for i in range(0, len(plot.mapView) - 1):
@@ -194,3 +200,4 @@ if __name__ == '__main__':
     plot.drawOnMap()
 
     # plot.testTheProjections()
+    print("--- %s seconds ---" % (time.time() - start_time))
