@@ -5,8 +5,16 @@ import sys
 import plotly.express as px
 import time
 
+from Generator.brazil import Brazil
+from Generator.china import China
+from Generator.germany import Germany
+from Generator.italy import Italy
+from Generator.russia import Russia
+from Generator.usa import USA
+from Generator.world import World
+
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
-from Generator import world, germany, usa, china, russia, italy, brazil
+
 
 class CoronaPlot:
     def createPlots(self):
@@ -48,6 +56,15 @@ class CoronaPlot:
                       color_discrete_sequence=px.colors.qualitative.Alphabet,
                       hover_data=["newCases", "dailyCasesPerPopulation"])
         fig.write_html("../Website/generated/daily-cases-per-population.html")
+
+        fig = px.line(self.data, x='date', y='casesPerPopulation', color='country',
+                      title="% of population infected",
+                      labels={"date": "Date", "casesPerPopulation": "Population %",
+                              "country": "Country", 'infectedOneIn': 'One In ... people',
+                              "totalCases": "Total"},
+                      category_orders={'country': self.orderedCountries}, hover_data=['totalCases'],
+                      color_discrete_sequence=px.colors.qualitative.Alphabet)
+        fig.write_html("../Website/generated/total-cases-per-population.html")
 
     def drawOnMap(self):
         # temps, geyser, gray_r, burg
@@ -164,40 +181,61 @@ def getPP(elem):
 
 
 if __name__ == '__main__':
-    start_time = time.time()
+    tt = time.time()
 
     plot = CoronaPlot()
     plot.loadWorld()
 
-    plot.data, plot.mapView = world.loadCoronaData()
+    start_time = time.time()
+    world = World()
+    plot.data = world.data
+    plot.mapView = world.mapView
+    print("World: " + str(time.time() - start_time) + " seconds.")
 
-    view, geo, data = germany.loadCoronaData()
-    addToMap(view, geo, False)
-    plot.data.extend(data)
+    start_time = time.time()
+    germany = Germany()
+    addToMap(germany.mapView, germany.geo, False)
+    plot.data.extend(germany.plotData)
+    print("Germany: " + str(time.time() - start_time) + " seconds.")
 
-    view, geo = usa.loadCoronaData()
-    addToMap(view, geo)
+    start_time = time.time()
+    usa = USA()
+    addToMap(usa.mapView, usa.geo)
+    print("USA: " + str(time.time() - start_time) + " seconds.")
 
-    view, geo = china.loadCoronaData()
-    addToMap(view, geo)
+    start_time = time.time()
+    china = China()
+    addToMap(china.mapView, china.geo)
+    print("China: " + str(time.time() - start_time) + " seconds.")
 
-    view, geo = russia.loadCoronaData()
-    addToMap(view, geo)
+    start_time = time.time()
+    russia = Russia()
+    addToMap(russia.mapView, russia.geo)
+    print("Russia: " + str(time.time() - start_time) + " seconds.")
 
-    view, geo = italy.loadCoronaData()
-    addToMap(view, geo, False)
+    start_time = time.time()
+    italy = Italy()
+    addToMap(italy.mapView, italy.geo, False)
+    print("Italy: " + str(time.time() - start_time) + " seconds.")
 
-    view, geo, data = brazil.loadCoronaData()
-    addToMap(view, geo, False)
-    plot.data.extend(data)
+    start_time = time.time()
+    brazil = Brazil()
+    addToMap(brazil.mapView, brazil.geo, False)
+    plot.data.extend(brazil.plotData)
+    print("Brazil: " + str(time.time() - start_time) + " seconds.")
 
     plot.orderedCountries = []
     plot.mapView.sort(key=getPP, reverse=True)
     for i in range(0, len(plot.mapView) - 1):
         plot.orderedCountries.append(plot.mapView[i]['region'])
 
+    start_time = time.time()
     plot.createPlots()
+    print("Plots: " + str(time.time() - start_time) + " seconds.")
+
+    start_time = time.time()
     plot.drawOnMap()
+    print("Maps: " + str(time.time() - start_time) + " seconds.")
 
     # plot.testTheProjections()
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("Total Time: %s seconds" % (time.time() - tt))

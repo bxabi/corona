@@ -4,54 +4,52 @@ import numpy as np
 
 from Generator import tools
 
-population = pd.read_csv("data/USA/usa-population.csv", "\t")
 
-with open('data/admin1.geojson') as json_file:
-    admin1Geo = json.load(json_file)
+class USA:
+    totalDeaths = {}
+    lastDayDeaths = {}
+    totalCases = {}
+    lastDayCases = {}
+    mapView = []
 
-csv = pd.read_csv('data/USA/us-states.csv', ',')
+    def __init__(self):
+        self.population = pd.read_csv("data/USA/usa-population.csv", "\t")
 
-totalDeaths = {}
-lastDayDeaths = {}
-totalCases = {}
-lastDayCases = {}
+        with open('data/admin1.geojson') as json_file:
+            self.geo = json.load(json_file)
 
-for row in reversed(csv.values):
-    state = row[1]
-    cases = row[3]
-    deaths = row[4]
+        csv = pd.read_csv('data/USA/us-states.csv', ',')
 
-    if state in lastDayCases:  # we parsed the last 2 days already
-        break
+        for row in reversed(csv.values):
+            state = row[1]
+            cases = row[3]
+            deaths = row[4]
 
-    if state not in totalCases:
-        totalCases[state] = cases
-        totalDeaths[state] = deaths
-    else:
-        lastDayCases[state] = totalCases[state] - cases
-        lastDayDeaths[state] = totalDeaths[state] - deaths
+            if state in self.lastDayCases:  # we parsed the last 2 days already
+                break
 
-mapView = []
+            if state not in self.totalCases:
+                self.totalCases[state] = cases
+                self.totalDeaths[state] = deaths
+            else:
+                self.lastDayCases[state] = self.totalCases[state] - cases
+                self.lastDayDeaths[state] = self.totalDeaths[state] - deaths
 
+        self.geo["features"][:] = [value for value in self.geo["features"] if self.isInUsa(value)]
 
-def isInUsa(object):
-    country = object["properties"]["country"]
-    if country != "United States of America":
+    def isInUsa(self, object):
+        country = object["properties"]["country"]
+        if country != "United States of America":
+            return False
+
+        state = object["properties"]["name"]
+        result = np.where(self.population.State.values == state)
+        if result[0].size > 0:
+            object["id"] = state
+            row = tools.getMapviewRow(state, self.lastDayCases[state], self.lastDayDeaths[state],
+                                      self.totalCases[state], self.totalDeaths[state],
+                                      self.population.Population.values[result[0][0]])
+            self.mapView.append(row)
+            return True
+
         return False
-
-    state = object["properties"]["name"]
-    result = np.where(population.State.values == state)
-    if result[0].size > 0:
-        object["id"] = state
-        row = tools.getMapviewRow(state, lastDayCases[state], lastDayDeaths[state], totalCases[state],
-                                  totalDeaths[state], population.Population.values[result[0][0]])
-        mapView.append(row)
-        return True
-    return False
-
-
-admin1Geo["features"][:] = [value for value in admin1Geo["features"] if isInUsa(value)]
-
-
-def loadCoronaData():
-    return mapView, admin1Geo
