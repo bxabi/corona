@@ -5,13 +5,13 @@ import sys
 import plotly.express as px
 import time
 
-from Generator.brazil import Brazil
-from Generator.china import China
-from Generator.germany import Germany
-from Generator.italy import Italy
-from Generator.russia import Russia
-from Generator.usa import USA
-from Generator.world import World
+from Regions.brazil import Brazil
+from Regions.china import China
+from Regions.germany import Germany
+from Regions.italy import Italy
+from Regions.russia import Russia
+from Regions.usa import USA
+from Regions.world import World
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
 

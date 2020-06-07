@@ -2,7 +2,7 @@ import json
 import pandas as pd
 import numpy as np
 
-from Generator import tools
+from . import tools
 
 
 class USA:

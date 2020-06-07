@@ -1,9 +1,7 @@
 import json
 import pandas as pd
-import numpy as np
-from mako.filters import trim
 
-from Generator import tools
+from . import tools
 
 
 class Italy:

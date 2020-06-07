@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 
-from Generator import tools
+from . import tools
 
 
 class Germany:
