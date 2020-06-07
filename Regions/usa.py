@@ -6,34 +6,55 @@ from . import tools
 
 
 class USA:
+    mapView = []
+    population = {}
+    plotData = []
+
     totalDeaths = {}
     lastDayDeaths = {}
     totalCases = {}
     lastDayCases = {}
-    mapView = []
 
     def __init__(self):
-        self.population = pd.read_csv("data/USA/usa-population.csv", "\t")
+        populationCsv = pd.read_csv("data/USA/usa-population.csv", ",")
+        for row in populationCsv.values:
+            self.population[row[0]] = row[1]
+            self.totalCases[row[0]] = 0
+            self.totalDeaths[row[0]] = 0
 
         with open('data/admin1.geojson') as json_file:
             self.geo = json.load(json_file)
 
         csv = pd.read_csv('data/USA/us-states.csv', ',')
 
-        for row in reversed(csv.values):
+        for row in csv.values:
             state = row[1]
             cases = row[3]
             deaths = row[4]
 
-            if state in self.lastDayCases:  # we parsed the last 2 days already
-                break
-
-            if state not in self.totalCases:
-                self.totalCases[state] = cases
-                self.totalDeaths[state] = deaths
+            if state not in self.population:
+                continue  # Guam, Northern Mariana Islands, Virgin Islands.
             else:
-                self.lastDayCases[state] = self.totalCases[state] - cases
-                self.lastDayDeaths[state] = self.totalDeaths[state] - deaths
+                pop = self.population[state]
+
+            self.lastDayCases[state] = cases - self.totalCases[state]
+            self.lastDayDeaths[state] = deaths - self.totalDeaths[state]
+            self.totalCases[state] = cases
+            self.totalDeaths[state] = deaths
+
+            deathsPerPopulation = deaths * 100 / pop
+            dailyDeathsPerPopulation = self.lastDayDeaths[state] * 100 / pop  # how many %
+            casesPerPopulation = cases * 100 / pop
+            dailyCasesPerPopulation = self.lastDayCases[state] * 100 / pop  # how many %
+
+            self.plotData.append(
+                {"country": state, "date": row[0],
+                 "newCases": self.lastDayCases[state],
+                 "newDeaths": self.lastDayDeaths[state], "totalCases": cases,
+                 "totalDeaths": deaths, "deathsPerPopulation": deathsPerPopulation,
+                 "casesPerPopulation": casesPerPopulation,
+                 "dailyDeathsPerPopulation": dailyDeathsPerPopulation,
+                 "dailyCasesPerPopulation": dailyCasesPerPopulation})
 
         self.geo["features"][:] = [value for value in self.geo["features"] if self.isInUsa(value)]
 
@@ -43,12 +64,11 @@ class USA:
             return False
 
         state = object["properties"]["name"]
-        result = np.where(self.population.State.values == state)
-        if result[0].size > 0:
+        if state in self.population:
             object["id"] = state
             row = tools.getMapviewRow(state, self.lastDayCases[state], self.lastDayDeaths[state],
                                       self.totalCases[state], self.totalDeaths[state],
-                                      self.population.Population.values[result[0][0]])
+                                      self.population[state])
             self.mapView.append(row)
             return True
 

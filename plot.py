@@ -201,6 +201,7 @@ if __name__ == '__main__':
     start_time = time.time()
     usa = USA()
     addToMap(usa.mapView, usa.geo)
+    plot.data.extend(usa.plotData)
     print("USA: " + str(time.time() - start_time) + " seconds.")
 
     start_time = time.time()
