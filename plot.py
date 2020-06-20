@@ -5,13 +5,14 @@ import sys
 import plotly.express as px
 import time
 
+from Regions.world import World
 from Regions.brazil import Brazil
 from Regions.china import China
 from Regions.germany import Germany
 from Regions.italy import Italy
 from Regions.russia import Russia
 from Regions.usa import USA
-from Regions.world import World
+from Regions.india import India
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/..")
 
@@ -117,7 +118,7 @@ class CoronaPlot:
 
         for object in self.worldGeo["features"]:
             x = object["properties"]["name"]
-            if x != "Germany" and x != "United States of America" and x != "China" and x != "Russia" and x != "Italy" and x != "Brazil":
+            if x != "Germany" and x != "United States of America" and x != "China" and x != "Russia" and x != "Italy" and x != "Brazil" and x != "India":
                 object["id"] = x.upper()
 
     # to test different projections.
@@ -181,8 +182,20 @@ def getPP(elem):
 
 
 if __name__ == '__main__':
-    tt = time.time()
+    # t = time.time()
+    # try:
+    #     f = open(".lastrun", "r")
+    #     last = float(f.readline())
+    #     if last - t < 60*60:
+    #         print("It was refreshed less than an hour ago, exiting.")
+    #         sys.exit(1)
+    # except FileNotFoundError:
+    #     pass
+    # f = open(".lastrun", "w")
+    # f.write(str(t))
+    # f.close()
 
+    tt = time.time()
     plot = CoronaPlot()
     plot.loadWorld()
 
@@ -224,6 +237,12 @@ if __name__ == '__main__':
     addToMap(brazil.mapView, brazil.geo, True)
     plot.data.extend(brazil.plotData)
     print("Brazil: " + str(time.time() - start_time) + " seconds.")
+
+    start_time = time.time()
+    india = India()
+    addToMap(india.mapView, india.geo, True)
+    plot.data.extend(india.plotData)
+    print("India: " + str(time.time() - start_time) + " seconds.")
 
     plot.orderedCountries = []
     plot.mapView.sort(key=getPP, reverse=True)
