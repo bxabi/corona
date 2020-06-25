@@ -182,18 +182,18 @@ def getPP(elem):
 
 
 if __name__ == '__main__':
-    # t = time.time()
-    # try:
-    #     f = open(".lastrun", "r")
-    #     last = float(f.readline())
-    #     if last - t < 60*60:
-    #         print("It was refreshed less than an hour ago, exiting.")
-    #         sys.exit(1)
-    # except FileNotFoundError:
-    #     pass
-    # f = open(".lastrun", "w")
-    # f.write(str(t))
-    # f.close()
+    t = time.time()
+    try:
+        f = open(".lastrun", "r")
+        last = float(f.readline())
+        if last - t < 60 * 60:
+            print("It was refreshed less than an hour ago, exiting.")
+            sys.exit(1)
+    except FileNotFoundError:
+        pass
+    f = open(".lastrun", "w")
+    f.write(str(t))
+    f.close()
 
     tt = time.time()
     plot = CoronaPlot()
