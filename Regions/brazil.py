@@ -29,17 +29,17 @@ class Brazil:
         csv = pd.read_csv('data/Brazil/cases-brazil-states.csv')
 
         for row in csv.values:
-            if row[2] == 'TOTAL':  # skip values for the whole country
+            if row[3] == 'TOTAL':  # skip values for the whole country
                 continue
 
-            short = row[2]
+            short = row[3]
             state = self.states[short]
 
-            date = row[0]
-            tc = int(row[7])
-            ldc = int(row[6])
-            td = int(row[5])
-            ldd = int(row[4])
+            date = row[1]
+            tc = int(row[10])
+            ldc = int(row[9])
+            td = int(row[8])
+            ldd = int(row[7])
             pop = self.population[state]
 
             deathsPerPopulation = td * 100 / pop
