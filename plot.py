@@ -186,7 +186,7 @@ if __name__ == '__main__':
     try:
         f = open(".lastrun", "r")
         last = float(f.readline())
-        if last - t < 60 * 60:
+        if t - last < 60 * 60:
             print("It was refreshed less than an hour ago, exiting.")
             sys.exit(1)
     except FileNotFoundError:
