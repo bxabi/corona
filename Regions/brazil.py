@@ -36,10 +36,10 @@ class Brazil:
             state = self.states[short]
 
             date = row[1]
-            tc = int(row[10])
-            ldc = int(row[9])
-            td = int(row[8])
-            ldd = int(row[7])
+            tc = int(row[8])
+            ldc = int(row[7])
+            td = int(row[6])
+            ldd = int(row[5])
             pop = self.population[state]
 
             deathsPerPopulation = td * 100 / pop
