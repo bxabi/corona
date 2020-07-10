@@ -18,7 +18,7 @@ class World:
                 self.population[line[2].upper()] = -1
             #    print("Too small population: " + line[2])
 
-        alldata = pd.read_excel('data/COVID-19-worldwide.xlsx')
+        alldata = pd.read_csv('data/COVID-19-worldwide.csv')
         for line in alldata.values:
             self.data.append({'date': line[0], 'newDeaths': line[5], 'country': line[6].upper().replace('_', ' '),
                               'population': line[9], 'newCases': line[4]})
