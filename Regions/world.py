@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import pandas as pd
 
 from . import tools
@@ -20,7 +22,8 @@ class World:
 
         alldata = pd.read_csv('data/COVID-19-worldwide.csv')
         for line in alldata.values:
-            self.data.append({'date': line[0], 'newDeaths': line[5], 'country': line[6].upper().replace('_', ' '),
+            date_time_obj = datetime.strptime(line[0], '%d/%m/%Y')
+            self.data.append({'date': date_time_obj, 'newDeaths': line[5], 'country': line[6].upper().replace('_', ' '),
                               'population': line[9], 'newCases': line[4]})
         self.data.reverse()
 
