@@ -1,4 +1,6 @@
 import json
+from datetime import datetime
+
 import pandas as pd
 
 from . import tools
@@ -28,25 +30,32 @@ class India:
             pop = int(row1[5].replace(',', ''))
             self.population[state] = pop
             for j in range(8, len(row1)):
-                date = casesCsv.columns[6][0]
-                self.lastDayCases[state] = row1[j] - row1[j-1]
-                self.totalCases[state] = row1[j]
-                casesPerPopulation = self.totalCases[state] * 100 / pop
-                dailyCasesPerPopulation = self.lastDayCases[state] * 100 / pop  # how many %
+                dateStr = casesCsv.columns[7]
+                date = datetime.strptime(dateStr, '%m/%d/%Y')
 
-                self.lastDayDeaths[state] = row2[j] - row2[j-1]
-                self.totalDeaths[state] = row2[j]
-                deathsPerPopulation = self.totalDeaths[state] * 100 / pop
-                dailyDeathsPerPopulation = self.lastDayDeaths[state] * 100 / pop  # how many %
+                lastDayCases = row1[j] - row1[j - 1]
+                totalCases = row1[j]
+                casesPerPopulation = totalCases * 100 / pop
+                dailyCasesPerPopulation = lastDayCases * 100 / pop  # how many %
+
+                lastDayDeaths = row2[j] - row2[j - 1]
+                totalDeaths = row2[j]
+                deathsPerPopulation = totalDeaths * 100 / pop
+                dailyDeathsPerPopulation = lastDayDeaths * 100 / pop  # how many %
 
                 self.plotData.append(
                     {"country": state, "date": date,
-                     "newCases": self.lastDayCases[state],
-                     "newDeaths": self.lastDayDeaths[state], "totalCases": self.totalCases[state],
-                     "totalDeaths": self.totalDeaths[state], "deathsPerPopulation": deathsPerPopulation,
+                     "newCases": lastDayCases,
+                     "newDeaths": lastDayDeaths, "totalCases": totalCases,
+                     "totalDeaths": totalDeaths, "deathsPerPopulation": deathsPerPopulation,
                      "casesPerPopulation": casesPerPopulation,
                      "dailyDeathsPerPopulation": dailyDeathsPerPopulation,
                      "dailyCasesPerPopulation": dailyCasesPerPopulation})
+
+            self.lastDayDeaths[state] = lastDayDeaths
+            self.lastDayCases[state] = lastDayCases
+            self.totalCases[state] = totalCases
+            self.totalDeaths[state] = totalDeaths
 
         self.geo["features"][:] = [value for value in self.geo["features"] if self.isInIndia(value)]
 
