@@ -2,11 +2,11 @@
     {
         "provinceName": "香港",
         "provinceShortName": "香港",
-        "currentConfirmedCount": 1516,
-        "confirmedCount": 3591,
+        "currentConfirmedCount": 1487,
+        "confirmedCount": 3669,
         "suspectedCount": 93,
-        "curedCount": 2037,
-        "deadCount": 38,
+        "curedCount": 2141,
+        "deadCount": 41,
         "comment": "疑似 1 例",
         "locationId": 810000,
         "statisticsData": "https://file1.dxycdn.com/2020/0223/331/3398299755968040033-135.json",
@@ -15,10 +15,10 @@
     {
         "provinceName": "新疆维吾尔自治区",
         "provinceShortName": "新疆",
-        "currentConfirmedCount": 590,
-        "confirmedCount": 696,
+        "currentConfirmedCount": 606,
+        "confirmedCount": 724,
         "suspectedCount": 0,
-        "curedCount": 103,
+        "curedCount": 115,
         "deadCount": 3,
         "comment": "",
         "locationId": 650000,
@@ -26,10 +26,10 @@
         "cities": [
             {
                 "cityName": "乌鲁木齐",
-                "currentConfirmedCount": 586,
-                "confirmedCount": 639,
+                "currentConfirmedCount": 602,
+                "confirmedCount": 667,
                 "suspectedCount": 0,
-                "curedCount": 53,
+                "curedCount": 65,
                 "deadCount": 0,
                 "locationId": 650100
             },
@@ -155,8 +155,8 @@
     {
         "provinceName": "辽宁省",
         "provinceShortName": "辽宁",
-        "currentConfirmedCount": 91,
-        "confirmedCount": 253,
+        "currentConfirmedCount": 93,
+        "confirmedCount": 255,
         "suspectedCount": 0,
         "curedCount": 160,
         "deadCount": 2,
@@ -166,8 +166,8 @@
         "cities": [
             {
                 "cityName": "大连",
-                "currentConfirmedCount": 87,
-                "confirmedCount": 105,
+                "currentConfirmedCount": 89,
+                "confirmedCount": 107,
                 "suspectedCount": 0,
                 "curedCount": 18,
                 "deadCount": 0,
@@ -304,8 +304,8 @@
     {
         "provinceName": "台湾",
         "provinceShortName": "台湾",
-        "currentConfirmedCount": 27,
-        "confirmedCount": 475,
+        "currentConfirmedCount": 26,
+        "confirmedCount": 474,
         "suspectedCount": 371,
         "curedCount": 441,
         "deadCount": 7,
@@ -317,10 +317,10 @@
     {
         "provinceName": "广东省",
         "provinceShortName": "广东",
-        "currentConfirmedCount": 18,
-        "confirmedCount": 1683,
+        "currentConfirmedCount": 20,
+        "confirmedCount": 1687,
         "suspectedCount": 14,
-        "curedCount": 1657,
+        "curedCount": 1659,
         "deadCount": 8,
         "comment": "",
         "locationId": 440000,
@@ -328,8 +328,8 @@
         "cities": [
             {
                 "cityName": "广州",
-                "currentConfirmedCount": 17,
-                "confirmedCount": 597,
+                "currentConfirmedCount": 20,
+                "confirmedCount": 600,
                 "suspectedCount": 9,
                 "curedCount": 579,
                 "deadCount": 1,
@@ -346,8 +346,8 @@
             },
             {
                 "cityName": "深圳",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 462,
+                "currentConfirmedCount": 1,
+                "confirmedCount": 463,
                 "suspectedCount": 1,
                 "curedCount": 459,
                 "deadCount": 3,
@@ -508,10 +508,10 @@
             },
             {
                 "cityName": "待明确地区",
-                "currentConfirmedCount": -1,
+                "currentConfirmedCount": -3,
                 "confirmedCount": 0,
                 "suspectedCount": 0,
-                "curedCount": 1,
+                "curedCount": 3,
                 "deadCount": 0,
                 "locationId": 0
             }
@@ -520,10 +520,10 @@
     {
         "provinceName": "上海市",
         "provinceShortName": "上海",
-        "currentConfirmedCount": 17,
-        "confirmedCount": 749,
+        "currentConfirmedCount": 16,
+        "confirmedCount": 750,
         "suspectedCount": 393,
-        "curedCount": 725,
+        "curedCount": 727,
         "deadCount": 7,
         "comment": "因未公布分区死亡和治愈，仅展示累计确诊和现存确诊",
         "locationId": 310000,
@@ -531,10 +531,10 @@
         "cities": [
             {
                 "cityName": "境外输入",
-                "currentConfirmedCount": 17,
-                "confirmedCount": 407,
+                "currentConfirmedCount": 16,
+                "confirmedCount": 408,
                 "suspectedCount": 4,
-                "curedCount": 390,
+                "curedCount": 392,
                 "deadCount": 0,
                 "locationId": 0
             },
@@ -985,8 +985,8 @@
     {
         "provinceName": "四川省",
         "provinceShortName": "四川",
-        "currentConfirmedCount": 8,
-        "confirmedCount": 608,
+        "currentConfirmedCount": 9,
+        "confirmedCount": 609,
         "suspectedCount": 13,
         "curedCount": 597,
         "deadCount": 3,
@@ -996,8 +996,8 @@
         "cities": [
             {
                 "cityName": "成都",
-                "currentConfirmedCount": 8,
-                "confirmedCount": 212,
+                "currentConfirmedCount": 9,
+                "confirmedCount": 213,
                 "suspectedCount": 13,
                 "curedCount": 201,
                 "deadCount": 3,
@@ -1188,10 +1188,10 @@
     {
         "provinceName": "北京市",
         "provinceShortName": "北京",
-        "currentConfirmedCount": 7,
+        "currentConfirmedCount": 6,
         "confirmedCount": 933,
         "suspectedCount": 164,
-        "curedCount": 917,
+        "curedCount": 918,
         "deadCount": 9,
         "comment": "北京卫健委未明确大部分治愈与死亡病例的分区归属，因此北京市下辖分区的现存确诊暂无法获取。",
         "locationId": 110000,
@@ -1352,10 +1352,10 @@
             },
             {
                 "cityName": "待明确地区",
-                "currentConfirmedCount": -688,
+                "currentConfirmedCount": -689,
                 "confirmedCount": 3,
                 "suspectedCount": 0,
-                "curedCount": 682,
+                "curedCount": 683,
                 "deadCount": 9,
                 "locationId": 0
             }
