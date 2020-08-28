@@ -2,11 +2,11 @@
     {
         "provinceName": "香港",
         "provinceShortName": "香港",
-        "currentConfirmedCount": 525,
-        "confirmedCount": 4710,
+        "currentConfirmedCount": 549,
+        "confirmedCount": 4735,
         "suspectedCount": 118,
         "curedCount": 4108,
-        "deadCount": 77,
+        "deadCount": 78,
         "comment": "疑似 1 例",
         "locationId": 810000,
         "statisticsData": "https://file1.dxycdn.com/2020/0223/331/3398299755968040033-135.json",
@@ -15,10 +15,10 @@
     {
         "provinceName": "新疆维吾尔自治区",
         "provinceShortName": "新疆",
-        "currentConfirmedCount": 160,
+        "currentConfirmedCount": 124,
         "confirmedCount": 902,
         "suspectedCount": 0,
-        "curedCount": 739,
+        "curedCount": 775,
         "deadCount": 3,
         "comment": "",
         "locationId": 650000,
@@ -26,10 +26,10 @@
         "cities": [
             {
                 "cityName": "乌鲁木齐",
-                "currentConfirmedCount": 160,
+                "currentConfirmedCount": 124,
                 "confirmedCount": 845,
                 "suspectedCount": 0,
-                "curedCount": 685,
+                "curedCount": 721,
                 "deadCount": 0,
                 "locationId": 650100
             },
@@ -155,10 +155,10 @@
     {
         "provinceName": "上海市",
         "provinceShortName": "上海",
-        "currentConfirmedCount": 76,
-        "confirmedCount": 882,
+        "currentConfirmedCount": 74,
+        "confirmedCount": 886,
         "suspectedCount": 393,
-        "curedCount": 799,
+        "curedCount": 805,
         "deadCount": 7,
         "comment": "因未公布分区死亡和治愈，仅展示累计确诊和现存确诊",
         "locationId": 310000,
@@ -166,10 +166,10 @@
         "cities": [
             {
                 "cityName": "境外输入",
-                "currentConfirmedCount": 76,
-                "confirmedCount": 540,
+                "currentConfirmedCount": 74,
+                "confirmedCount": 544,
                 "suspectedCount": 4,
-                "curedCount": 464,
+                "curedCount": 470,
                 "deadCount": 0,
                 "locationId": 0
             },
@@ -340,10 +340,10 @@
     {
         "provinceName": "山东省",
         "provinceShortName": "山东",
-        "currentConfirmedCount": 26,
+        "currentConfirmedCount": 23,
         "confirmedCount": 831,
         "suspectedCount": 14,
-        "curedCount": 798,
+        "curedCount": 801,
         "deadCount": 7,
         "comment": "",
         "locationId": 370000,
@@ -351,10 +351,10 @@
         "cities": [
             {
                 "cityName": "境外输入",
-                "currentConfirmedCount": 26,
+                "currentConfirmedCount": 23,
                 "confirmedCount": 68,
                 "suspectedCount": 14,
-                "curedCount": 42,
+                "curedCount": 45,
                 "deadCount": 0,
                 "locationId": 0
             },
@@ -511,10 +511,10 @@
     {
         "provinceName": "广东省",
         "provinceShortName": "广东",
-        "currentConfirmedCount": 20,
-        "confirmedCount": 1730,
+        "currentConfirmedCount": 22,
+        "confirmedCount": 1734,
         "suspectedCount": 14,
-        "curedCount": 1702,
+        "curedCount": 1704,
         "deadCount": 8,
         "comment": "",
         "locationId": 440000,
@@ -522,10 +522,10 @@
         "cities": [
             {
                 "cityName": "广州",
-                "currentConfirmedCount": 13,
-                "confirmedCount": 634,
+                "currentConfirmedCount": 15,
+                "confirmedCount": 638,
                 "suspectedCount": 9,
-                "curedCount": 620,
+                "curedCount": 622,
                 "deadCount": 1,
                 "locationId": 440100
             },
@@ -705,10 +705,10 @@
     {
         "provinceName": "四川省",
         "provinceShortName": "四川",
-        "currentConfirmedCount": 17,
-        "confirmedCount": 635,
+        "currentConfirmedCount": 20,
+        "confirmedCount": 640,
         "suspectedCount": 14,
-        "curedCount": 615,
+        "curedCount": 617,
         "deadCount": 3,
         "comment": "成都市包含所有境外输入病例 16例",
         "locationId": 510000,
@@ -716,10 +716,10 @@
         "cities": [
             {
                 "cityName": "成都",
-                "currentConfirmedCount": 16,
-                "confirmedCount": 238,
+                "currentConfirmedCount": 19,
+                "confirmedCount": 243,
                 "suspectedCount": 13,
-                "curedCount": 219,
+                "curedCount": 221,
                 "deadCount": 3,
                 "locationId": 510100
             },
@@ -906,137 +906,6 @@
         ]
     },
     {
-        "provinceName": "陕西省",
-        "provinceShortName": "陕西",
-        "currentConfirmedCount": 14,
-        "confirmedCount": 364,
-        "suspectedCount": 1,
-        "curedCount": 347,
-        "deadCount": 3,
-        "comment": "",
-        "locationId": 610000,
-        "statisticsData": "https://file1.dxycdn.com/2020/0223/857/3398299753820971228-135.json",
-        "cities": [
-            {
-                "cityName": "境外输入",
-                "currentConfirmedCount": 14,
-                "confirmedCount": 119,
-                "suspectedCount": 0,
-                "curedCount": 105,
-                "deadCount": 0,
-                "locationId": 0
-            },
-            {
-                "cityName": "西安",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 120,
-                "suspectedCount": 0,
-                "curedCount": 117,
-                "deadCount": 3,
-                "locationId": 610100
-            },
-            {
-                "cityName": "安康",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 26,
-                "suspectedCount": 0,
-                "curedCount": 26,
-                "deadCount": 0,
-                "locationId": 610900
-            },
-            {
-                "cityName": "汉中",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 26,
-                "suspectedCount": 0,
-                "curedCount": 26,
-                "deadCount": 0,
-                "locationId": 610700
-            },
-            {
-                "cityName": "咸阳",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 17,
-                "suspectedCount": 0,
-                "curedCount": 17,
-                "deadCount": 0,
-                "locationId": 610400
-            },
-            {
-                "cityName": "渭南",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 15,
-                "suspectedCount": 0,
-                "curedCount": 15,
-                "deadCount": 0,
-                "locationId": 610500
-            },
-            {
-                "cityName": "宝鸡",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 13,
-                "suspectedCount": 0,
-                "curedCount": 13,
-                "deadCount": 0,
-                "locationId": 610300
-            },
-            {
-                "cityName": "延安",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 8,
-                "suspectedCount": 0,
-                "curedCount": 8,
-                "deadCount": 0,
-                "locationId": 610600
-            },
-            {
-                "cityName": "铜川",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 8,
-                "suspectedCount": 0,
-                "curedCount": 8,
-                "deadCount": 0,
-                "locationId": 610200
-            },
-            {
-                "cityName": "商洛",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 7,
-                "suspectedCount": 0,
-                "curedCount": 7,
-                "deadCount": 0,
-                "locationId": 611000
-            },
-            {
-                "cityName": "榆林",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 3,
-                "suspectedCount": 0,
-                "curedCount": 3,
-                "deadCount": 0,
-                "locationId": 610800
-            },
-            {
-                "cityName": "韩城",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 1,
-                "suspectedCount": 0,
-                "curedCount": 1,
-                "deadCount": 0,
-                "locationId": 610581
-            },
-            {
-                "cityName": "杨凌",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 1,
-                "suspectedCount": 0,
-                "curedCount": 1,
-                "deadCount": 0,
-                "locationId": 0
-            }
-        ]
-    },
-    {
         "provinceName": "天津市",
         "provinceShortName": "天津",
         "currentConfirmedCount": 14,
@@ -1191,6 +1060,137 @@
                 "curedCount": 2,
                 "deadCount": 0,
                 "locationId": 120112
+            }
+        ]
+    },
+    {
+        "provinceName": "陕西省",
+        "provinceShortName": "陕西",
+        "currentConfirmedCount": 12,
+        "confirmedCount": 364,
+        "suspectedCount": 1,
+        "curedCount": 349,
+        "deadCount": 3,
+        "comment": "",
+        "locationId": 610000,
+        "statisticsData": "https://file1.dxycdn.com/2020/0223/857/3398299753820971228-135.json",
+        "cities": [
+            {
+                "cityName": "境外输入",
+                "currentConfirmedCount": 12,
+                "confirmedCount": 119,
+                "suspectedCount": 0,
+                "curedCount": 107,
+                "deadCount": 0,
+                "locationId": 0
+            },
+            {
+                "cityName": "西安",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 120,
+                "suspectedCount": 0,
+                "curedCount": 117,
+                "deadCount": 3,
+                "locationId": 610100
+            },
+            {
+                "cityName": "安康",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 26,
+                "suspectedCount": 0,
+                "curedCount": 26,
+                "deadCount": 0,
+                "locationId": 610900
+            },
+            {
+                "cityName": "汉中",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 26,
+                "suspectedCount": 0,
+                "curedCount": 26,
+                "deadCount": 0,
+                "locationId": 610700
+            },
+            {
+                "cityName": "咸阳",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 17,
+                "suspectedCount": 0,
+                "curedCount": 17,
+                "deadCount": 0,
+                "locationId": 610400
+            },
+            {
+                "cityName": "渭南",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 15,
+                "suspectedCount": 0,
+                "curedCount": 15,
+                "deadCount": 0,
+                "locationId": 610500
+            },
+            {
+                "cityName": "宝鸡",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 13,
+                "suspectedCount": 0,
+                "curedCount": 13,
+                "deadCount": 0,
+                "locationId": 610300
+            },
+            {
+                "cityName": "延安",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 8,
+                "suspectedCount": 0,
+                "curedCount": 8,
+                "deadCount": 0,
+                "locationId": 610600
+            },
+            {
+                "cityName": "铜川",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 8,
+                "suspectedCount": 0,
+                "curedCount": 8,
+                "deadCount": 0,
+                "locationId": 610200
+            },
+            {
+                "cityName": "商洛",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 7,
+                "suspectedCount": 0,
+                "curedCount": 7,
+                "deadCount": 0,
+                "locationId": 611000
+            },
+            {
+                "cityName": "榆林",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 3,
+                "suspectedCount": 0,
+                "curedCount": 3,
+                "deadCount": 0,
+                "locationId": 610800
+            },
+            {
+                "cityName": "韩城",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 1,
+                "suspectedCount": 0,
+                "curedCount": 1,
+                "deadCount": 0,
+                "locationId": 610581
+            },
+            {
+                "cityName": "杨凌",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 1,
+                "suspectedCount": 0,
+                "curedCount": 1,
+                "deadCount": 0,
+                "locationId": 0
             }
         ]
     },
@@ -1692,159 +1692,10 @@
         ]
     },
     {
-        "provinceName": "辽宁省",
-        "provinceShortName": "辽宁",
-        "currentConfirmedCount": 7,
-        "confirmedCount": 262,
-        "suspectedCount": 0,
-        "curedCount": 253,
-        "deadCount": 2,
-        "comment": "",
-        "locationId": 210000,
-        "statisticsData": "https://file1.dxycdn.com/2020/0223/815/3398299758115938736-135.json",
-        "cities": [
-            {
-                "cityName": "大连",
-                "currentConfirmedCount": 5,
-                "confirmedCount": 110,
-                "suspectedCount": 0,
-                "curedCount": 105,
-                "deadCount": 0,
-                "locationId": 210200
-            },
-            {
-                "cityName": "境外输入",
-                "currentConfirmedCount": 2,
-                "confirmedCount": 38,
-                "suspectedCount": 0,
-                "curedCount": 36,
-                "deadCount": 0,
-                "locationId": 0
-            },
-            {
-                "cityName": "沈阳",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 34,
-                "suspectedCount": 0,
-                "curedCount": 34,
-                "deadCount": 0,
-                "locationId": 210100
-            },
-            {
-                "cityName": "锦州",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 12,
-                "suspectedCount": 0,
-                "curedCount": 12,
-                "deadCount": 0,
-                "locationId": 210700
-            },
-            {
-                "cityName": "葫芦岛",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 12,
-                "suspectedCount": 0,
-                "curedCount": 11,
-                "deadCount": 1,
-                "locationId": 211400
-            },
-            {
-                "cityName": "丹东",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 11,
-                "suspectedCount": 0,
-                "curedCount": 11,
-                "deadCount": 0,
-                "locationId": 210600
-            },
-            {
-                "cityName": "盘锦",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 11,
-                "suspectedCount": 0,
-                "curedCount": 11,
-                "deadCount": 0,
-                "locationId": 211100
-            },
-            {
-                "cityName": "阜新",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 8,
-                "suspectedCount": 0,
-                "curedCount": 8,
-                "deadCount": 0,
-                "locationId": 210900
-            },
-            {
-                "cityName": "铁岭",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 8,
-                "suspectedCount": 0,
-                "curedCount": 8,
-                "deadCount": 0,
-                "locationId": 211200
-            },
-            {
-                "cityName": "朝阳",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 6,
-                "suspectedCount": 0,
-                "curedCount": 5,
-                "deadCount": 1,
-                "locationId": 211300
-            },
-            {
-                "cityName": "鞍山",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 4,
-                "suspectedCount": 0,
-                "curedCount": 4,
-                "deadCount": 0,
-                "locationId": 210300
-            },
-            {
-                "cityName": "本溪",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 3,
-                "suspectedCount": 0,
-                "curedCount": 3,
-                "deadCount": 0,
-                "locationId": 210500
-            },
-            {
-                "cityName": "辽阳",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 3,
-                "suspectedCount": 0,
-                "curedCount": 3,
-                "deadCount": 0,
-                "locationId": 211000
-            },
-            {
-                "cityName": "营口",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 1,
-                "suspectedCount": 0,
-                "curedCount": 1,
-                "deadCount": 0,
-                "locationId": 210800
-            },
-            {
-                "cityName": "抚顺",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 1,
-                "suspectedCount": 0,
-                "curedCount": 1,
-                "deadCount": 0,
-                "locationId": 210400
-            }
-        ]
-    },
-    {
         "provinceName": "云南省",
         "provinceShortName": "云南",
-        "currentConfirmedCount": 7,
-        "confirmedCount": 198,
+        "currentConfirmedCount": 8,
+        "confirmedCount": 199,
         "suspectedCount": 0,
         "curedCount": 189,
         "deadCount": 2,
@@ -1854,8 +1705,8 @@
         "cities": [
             {
                 "cityName": "境外输入",
-                "currentConfirmedCount": 7,
-                "confirmedCount": 24,
+                "currentConfirmedCount": 8,
+                "confirmedCount": 25,
                 "suspectedCount": 0,
                 "curedCount": 17,
                 "deadCount": 0,
@@ -1990,6 +1841,155 @@
         ]
     },
     {
+        "provinceName": "辽宁省",
+        "provinceShortName": "辽宁",
+        "currentConfirmedCount": 6,
+        "confirmedCount": 262,
+        "suspectedCount": 0,
+        "curedCount": 254,
+        "deadCount": 2,
+        "comment": "",
+        "locationId": 210000,
+        "statisticsData": "https://file1.dxycdn.com/2020/0223/815/3398299758115938736-135.json",
+        "cities": [
+            {
+                "cityName": "大连",
+                "currentConfirmedCount": 4,
+                "confirmedCount": 110,
+                "suspectedCount": 0,
+                "curedCount": 106,
+                "deadCount": 0,
+                "locationId": 210200
+            },
+            {
+                "cityName": "境外输入",
+                "currentConfirmedCount": 2,
+                "confirmedCount": 38,
+                "suspectedCount": 0,
+                "curedCount": 36,
+                "deadCount": 0,
+                "locationId": 0
+            },
+            {
+                "cityName": "沈阳",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 34,
+                "suspectedCount": 0,
+                "curedCount": 34,
+                "deadCount": 0,
+                "locationId": 210100
+            },
+            {
+                "cityName": "锦州",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 12,
+                "suspectedCount": 0,
+                "curedCount": 12,
+                "deadCount": 0,
+                "locationId": 210700
+            },
+            {
+                "cityName": "葫芦岛",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 12,
+                "suspectedCount": 0,
+                "curedCount": 11,
+                "deadCount": 1,
+                "locationId": 211400
+            },
+            {
+                "cityName": "丹东",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 11,
+                "suspectedCount": 0,
+                "curedCount": 11,
+                "deadCount": 0,
+                "locationId": 210600
+            },
+            {
+                "cityName": "盘锦",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 11,
+                "suspectedCount": 0,
+                "curedCount": 11,
+                "deadCount": 0,
+                "locationId": 211100
+            },
+            {
+                "cityName": "阜新",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 8,
+                "suspectedCount": 0,
+                "curedCount": 8,
+                "deadCount": 0,
+                "locationId": 210900
+            },
+            {
+                "cityName": "铁岭",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 8,
+                "suspectedCount": 0,
+                "curedCount": 8,
+                "deadCount": 0,
+                "locationId": 211200
+            },
+            {
+                "cityName": "朝阳",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 6,
+                "suspectedCount": 0,
+                "curedCount": 5,
+                "deadCount": 1,
+                "locationId": 211300
+            },
+            {
+                "cityName": "鞍山",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 4,
+                "suspectedCount": 0,
+                "curedCount": 4,
+                "deadCount": 0,
+                "locationId": 210300
+            },
+            {
+                "cityName": "本溪",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 3,
+                "suspectedCount": 0,
+                "curedCount": 3,
+                "deadCount": 0,
+                "locationId": 210500
+            },
+            {
+                "cityName": "辽阳",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 3,
+                "suspectedCount": 0,
+                "curedCount": 3,
+                "deadCount": 0,
+                "locationId": 211000
+            },
+            {
+                "cityName": "营口",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 1,
+                "suspectedCount": 0,
+                "curedCount": 1,
+                "deadCount": 0,
+                "locationId": 210800
+            },
+            {
+                "cityName": "抚顺",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 1,
+                "suspectedCount": 0,
+                "curedCount": 1,
+                "deadCount": 0,
+                "locationId": 210400
+            }
+        ]
+    },
+    {
         "provinceName": "江西省",
         "provinceShortName": "江西",
         "currentConfirmedCount": 3,
@@ -2116,182 +2116,6 @@
                 "suspectedCount": 0,
                 "curedCount": 1,
                 "deadCount": 0,
-                "locationId": 0
-            }
-        ]
-    },
-    {
-        "provinceName": "北京市",
-        "provinceShortName": "北京",
-        "currentConfirmedCount": 2,
-        "confirmedCount": 935,
-        "suspectedCount": 164,
-        "curedCount": 924,
-        "deadCount": 9,
-        "comment": "北京卫健委未明确大部分治愈与死亡病例的分区归属，因此北京市下辖分区的现存确诊暂无法获取。",
-        "locationId": 110000,
-        "statisticsData": "https://file1.dxycdn.com/2020/0223/004/3398299758115524169-135.json",
-        "cities": [
-            {
-                "cityName": "丰台区",
-                "currentConfirmedCount": 266,
-                "confirmedCount": 273,
-                "suspectedCount": 0,
-                "curedCount": 7,
-                "deadCount": 0,
-                "locationId": 110106
-            },
-            {
-                "cityName": "大兴区",
-                "currentConfirmedCount": 88,
-                "confirmedCount": 104,
-                "suspectedCount": 0,
-                "curedCount": 16,
-                "deadCount": 0,
-                "locationId": 110115
-            },
-            {
-                "cityName": "海淀区",
-                "currentConfirmedCount": 82,
-                "confirmedCount": 82,
-                "suspectedCount": 0,
-                "curedCount": 0,
-                "deadCount": 0,
-                "locationId": 110108
-            },
-            {
-                "cityName": "朝阳区",
-                "currentConfirmedCount": 77,
-                "confirmedCount": 77,
-                "suspectedCount": 0,
-                "curedCount": 0,
-                "deadCount": 0,
-                "locationId": 110105
-            },
-            {
-                "cityName": "西城区",
-                "currentConfirmedCount": 59,
-                "confirmedCount": 59,
-                "suspectedCount": 0,
-                "curedCount": 0,
-                "deadCount": 0,
-                "locationId": 110102
-            },
-            {
-                "cityName": "外地来京",
-                "currentConfirmedCount": 24,
-                "confirmedCount": 26,
-                "suspectedCount": 0,
-                "curedCount": 2,
-                "deadCount": 0,
-                "locationId": 0
-            },
-            {
-                "cityName": "昌平区",
-                "currentConfirmedCount": 20,
-                "confirmedCount": 30,
-                "suspectedCount": 0,
-                "curedCount": 10,
-                "deadCount": 0,
-                "locationId": 110114
-            },
-            {
-                "cityName": "通州区",
-                "currentConfirmedCount": 19,
-                "confirmedCount": 20,
-                "suspectedCount": 0,
-                "curedCount": 1,
-                "deadCount": 0,
-                "locationId": 110112
-            },
-            {
-                "cityName": "东城区",
-                "currentConfirmedCount": 18,
-                "confirmedCount": 19,
-                "suspectedCount": 0,
-                "curedCount": 1,
-                "deadCount": 0,
-                "locationId": 110101
-            },
-            {
-                "cityName": "房山区",
-                "currentConfirmedCount": 17,
-                "confirmedCount": 20,
-                "suspectedCount": 0,
-                "curedCount": 3,
-                "deadCount": 0,
-                "locationId": 110111
-            },
-            {
-                "cityName": "怀柔区",
-                "currentConfirmedCount": 7,
-                "confirmedCount": 7,
-                "suspectedCount": 0,
-                "curedCount": 0,
-                "deadCount": 0,
-                "locationId": 110116
-            },
-            {
-                "cityName": "密云区",
-                "currentConfirmedCount": 7,
-                "confirmedCount": 7,
-                "suspectedCount": 0,
-                "curedCount": 0,
-                "deadCount": 0,
-                "locationId": 110118
-            },
-            {
-                "cityName": "石景山区",
-                "currentConfirmedCount": 6,
-                "confirmedCount": 15,
-                "suspectedCount": 0,
-                "curedCount": 9,
-                "deadCount": 0,
-                "locationId": 110107
-            },
-            {
-                "cityName": "门头沟区",
-                "currentConfirmedCount": 3,
-                "confirmedCount": 5,
-                "suspectedCount": 0,
-                "curedCount": 2,
-                "deadCount": 0,
-                "locationId": 110109
-            },
-            {
-                "cityName": "境外输入",
-                "currentConfirmedCount": 1,
-                "confirmedCount": 176,
-                "suspectedCount": 3,
-                "curedCount": 175,
-                "deadCount": 0,
-                "locationId": 0
-            },
-            {
-                "cityName": "延庆区",
-                "currentConfirmedCount": 1,
-                "confirmedCount": 1,
-                "suspectedCount": 0,
-                "curedCount": 0,
-                "deadCount": 0,
-                "locationId": 110119
-            },
-            {
-                "cityName": "顺义区",
-                "currentConfirmedCount": 0,
-                "confirmedCount": 10,
-                "suspectedCount": 0,
-                "curedCount": 10,
-                "deadCount": 0,
-                "locationId": 110113
-            },
-            {
-                "cityName": "待明确地区",
-                "currentConfirmedCount": -693,
-                "confirmedCount": 4,
-                "suspectedCount": 0,
-                "curedCount": 688,
-                "deadCount": 9,
                 "locationId": 0
             }
         ]
@@ -3345,6 +3169,182 @@
                 "curedCount": 6,
                 "deadCount": 0,
                 "locationId": 341800
+            }
+        ]
+    },
+    {
+        "provinceName": "北京市",
+        "provinceShortName": "北京",
+        "currentConfirmedCount": 0,
+        "confirmedCount": 935,
+        "suspectedCount": 164,
+        "curedCount": 926,
+        "deadCount": 9,
+        "comment": "北京卫健委未明确大部分治愈与死亡病例的分区归属，因此北京市下辖分区的现存确诊暂无法获取。",
+        "locationId": 110000,
+        "statisticsData": "https://file1.dxycdn.com/2020/0223/004/3398299758115524169-135.json",
+        "cities": [
+            {
+                "cityName": "丰台区",
+                "currentConfirmedCount": 266,
+                "confirmedCount": 273,
+                "suspectedCount": 0,
+                "curedCount": 7,
+                "deadCount": 0,
+                "locationId": 110106
+            },
+            {
+                "cityName": "大兴区",
+                "currentConfirmedCount": 88,
+                "confirmedCount": 104,
+                "suspectedCount": 0,
+                "curedCount": 16,
+                "deadCount": 0,
+                "locationId": 110115
+            },
+            {
+                "cityName": "海淀区",
+                "currentConfirmedCount": 82,
+                "confirmedCount": 82,
+                "suspectedCount": 0,
+                "curedCount": 0,
+                "deadCount": 0,
+                "locationId": 110108
+            },
+            {
+                "cityName": "朝阳区",
+                "currentConfirmedCount": 77,
+                "confirmedCount": 77,
+                "suspectedCount": 0,
+                "curedCount": 0,
+                "deadCount": 0,
+                "locationId": 110105
+            },
+            {
+                "cityName": "西城区",
+                "currentConfirmedCount": 59,
+                "confirmedCount": 59,
+                "suspectedCount": 0,
+                "curedCount": 0,
+                "deadCount": 0,
+                "locationId": 110102
+            },
+            {
+                "cityName": "外地来京",
+                "currentConfirmedCount": 24,
+                "confirmedCount": 26,
+                "suspectedCount": 0,
+                "curedCount": 2,
+                "deadCount": 0,
+                "locationId": 0
+            },
+            {
+                "cityName": "昌平区",
+                "currentConfirmedCount": 20,
+                "confirmedCount": 30,
+                "suspectedCount": 0,
+                "curedCount": 10,
+                "deadCount": 0,
+                "locationId": 110114
+            },
+            {
+                "cityName": "通州区",
+                "currentConfirmedCount": 19,
+                "confirmedCount": 20,
+                "suspectedCount": 0,
+                "curedCount": 1,
+                "deadCount": 0,
+                "locationId": 110112
+            },
+            {
+                "cityName": "东城区",
+                "currentConfirmedCount": 18,
+                "confirmedCount": 19,
+                "suspectedCount": 0,
+                "curedCount": 1,
+                "deadCount": 0,
+                "locationId": 110101
+            },
+            {
+                "cityName": "房山区",
+                "currentConfirmedCount": 17,
+                "confirmedCount": 20,
+                "suspectedCount": 0,
+                "curedCount": 3,
+                "deadCount": 0,
+                "locationId": 110111
+            },
+            {
+                "cityName": "怀柔区",
+                "currentConfirmedCount": 7,
+                "confirmedCount": 7,
+                "suspectedCount": 0,
+                "curedCount": 0,
+                "deadCount": 0,
+                "locationId": 110116
+            },
+            {
+                "cityName": "密云区",
+                "currentConfirmedCount": 7,
+                "confirmedCount": 7,
+                "suspectedCount": 0,
+                "curedCount": 0,
+                "deadCount": 0,
+                "locationId": 110118
+            },
+            {
+                "cityName": "石景山区",
+                "currentConfirmedCount": 6,
+                "confirmedCount": 15,
+                "suspectedCount": 0,
+                "curedCount": 9,
+                "deadCount": 0,
+                "locationId": 110107
+            },
+            {
+                "cityName": "门头沟区",
+                "currentConfirmedCount": 3,
+                "confirmedCount": 5,
+                "suspectedCount": 0,
+                "curedCount": 2,
+                "deadCount": 0,
+                "locationId": 110109
+            },
+            {
+                "cityName": "延庆区",
+                "currentConfirmedCount": 1,
+                "confirmedCount": 1,
+                "suspectedCount": 0,
+                "curedCount": 0,
+                "deadCount": 0,
+                "locationId": 110119
+            },
+            {
+                "cityName": "境外输入",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 176,
+                "suspectedCount": 3,
+                "curedCount": 176,
+                "deadCount": 0,
+                "locationId": 0
+            },
+            {
+                "cityName": "顺义区",
+                "currentConfirmedCount": 0,
+                "confirmedCount": 10,
+                "suspectedCount": 0,
+                "curedCount": 10,
+                "deadCount": 0,
+                "locationId": 110113
+            },
+            {
+                "cityName": "待明确地区",
+                "currentConfirmedCount": -694,
+                "confirmedCount": 4,
+                "suspectedCount": 0,
+                "curedCount": 689,
+                "deadCount": 9,
+                "locationId": 0
             }
         ]
     },
