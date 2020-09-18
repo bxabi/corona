@@ -178,7 +178,7 @@ def addToMap(view, geo, doSimplification=True):
 
 
 def getPP(elem):
-    return elem['deathsPerPopulation']
+    return elem['region']
 
 
 if __name__ == '__main__':
@@ -245,7 +245,7 @@ if __name__ == '__main__':
     print("India: " + str(time.time() - start_time) + " seconds.")
 
     plot.orderedCountries = []
-    plot.mapView.sort(key=getPP, reverse=True)
+    plot.mapView.sort(key=getPP, reverse=False)
     for i in range(0, len(plot.mapView) - 1):
         plot.orderedCountries.append(plot.mapView[i]['region'])
 
