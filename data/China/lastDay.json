@@ -2,10 +2,10 @@
     {
         "provinceName": "香港",
         "provinceShortName": "香港",
-        "currentConfirmedCount": 226,
-        "confirmedCount": 5046,
+        "currentConfirmedCount": 197,
+        "confirmedCount": 5049,
         "suspectedCount": 140,
-        "curedCount": 4717,
+        "curedCount": 4749,
         "deadCount": 103,
         "comment": "疑似 1 例",
         "locationId": 810000,
@@ -200,10 +200,10 @@
     {
         "provinceName": "陕西省",
         "provinceShortName": "陕西",
-        "currentConfirmedCount": 26,
+        "currentConfirmedCount": 24,
         "confirmedCount": 401,
         "suspectedCount": 1,
-        "curedCount": 372,
+        "curedCount": 374,
         "deadCount": 3,
         "comment": "",
         "locationId": 610000,
@@ -211,10 +211,10 @@
         "cities": [
             {
                 "cityName": "境外输入",
-                "currentConfirmedCount": 26,
+                "currentConfirmedCount": 24,
                 "confirmedCount": 156,
                 "suspectedCount": 0,
-                "curedCount": 130,
+                "curedCount": 132,
                 "deadCount": 0,
                 "locationId": 0
             },
@@ -329,25 +329,12 @@
         ]
     },
     {
-        "provinceName": "台湾",
-        "provinceShortName": "台湾",
-        "currentConfirmedCount": 23,
-        "confirmedCount": 509,
-        "suspectedCount": 417,
-        "curedCount": 479,
-        "deadCount": 7,
-        "comment": "",
-        "locationId": 710000,
-        "statisticsData": "https://file1.dxycdn.com/2020/0223/045/3398299749526003760-135.json",
-        "cities": []
-    },
-    {
         "provinceName": "广东省",
         "provinceShortName": "广东",
-        "currentConfirmedCount": 21,
-        "confirmedCount": 1803,
+        "currentConfirmedCount": 22,
+        "confirmedCount": 1807,
         "suspectedCount": 14,
-        "curedCount": 1774,
+        "curedCount": 1777,
         "deadCount": 8,
         "comment": "",
         "locationId": 440000,
@@ -355,10 +342,10 @@
         "cities": [
             {
                 "cityName": "广州",
-                "currentConfirmedCount": 17,
-                "confirmedCount": 700,
+                "currentConfirmedCount": 18,
+                "confirmedCount": 704,
                 "suspectedCount": 9,
-                "curedCount": 682,
+                "curedCount": 685,
                 "deadCount": 1,
                 "locationId": 440100
             },
@@ -536,12 +523,25 @@
         ]
     },
     {
+        "provinceName": "台湾",
+        "provinceShortName": "台湾",
+        "currentConfirmedCount": 22,
+        "confirmedCount": 509,
+        "suspectedCount": 417,
+        "curedCount": 480,
+        "deadCount": 7,
+        "comment": "",
+        "locationId": 710000,
+        "statisticsData": "https://file1.dxycdn.com/2020/0223/045/3398299749526003760-135.json",
+        "cities": []
+    },
+    {
         "provinceName": "四川省",
         "provinceShortName": "四川",
-        "currentConfirmedCount": 15,
-        "confirmedCount": 672,
+        "currentConfirmedCount": 17,
+        "confirmedCount": 675,
         "suspectedCount": 14,
-        "curedCount": 654,
+        "curedCount": 655,
         "deadCount": 3,
         "comment": "",
         "locationId": 510000,
@@ -549,10 +549,10 @@
         "cities": [
             {
                 "cityName": "成都",
-                "currentConfirmedCount": 15,
-                "confirmedCount": 275,
+                "currentConfirmedCount": 17,
+                "confirmedCount": 278,
                 "suspectedCount": 13,
-                "curedCount": 257,
+                "curedCount": 258,
                 "deadCount": 3,
                 "locationId": 510100
             },
@@ -741,10 +741,10 @@
     {
         "provinceName": "福建省",
         "provinceShortName": "福建",
-        "currentConfirmedCount": 15,
+        "currentConfirmedCount": 14,
         "confirmedCount": 396,
         "suspectedCount": 3,
-        "curedCount": 380,
+        "curedCount": 381,
         "deadCount": 1,
         "comment": "",
         "locationId": 350000,
@@ -752,10 +752,10 @@
         "cities": [
             {
                 "cityName": "境外输入人员",
-                "currentConfirmedCount": 15,
+                "currentConfirmedCount": 14,
                 "confirmedCount": 100,
                 "suspectedCount": 1,
-                "curedCount": 85,
+                "curedCount": 86,
                 "deadCount": 0,
                 "locationId": 0
             },
@@ -1125,8 +1125,8 @@
     {
         "provinceName": "山东省",
         "provinceShortName": "山东",
-        "currentConfirmedCount": 8,
-        "confirmedCount": 831,
+        "currentConfirmedCount": 9,
+        "confirmedCount": 832,
         "suspectedCount": 14,
         "curedCount": 816,
         "deadCount": 7,
@@ -1136,8 +1136,8 @@
         "cities": [
             {
                 "cityName": "境外输入",
-                "currentConfirmedCount": 8,
-                "confirmedCount": 68,
+                "currentConfirmedCount": 9,
+                "confirmedCount": 69,
                 "suspectedCount": 14,
                 "curedCount": 60,
                 "deadCount": 0,
@@ -1284,9 +1284,9 @@
         "provinceName": "天津市",
         "provinceShortName": "天津",
         "currentConfirmedCount": 7,
-        "confirmedCount": 238,
+        "confirmedCount": 239,
         "suspectedCount": 50,
-        "curedCount": 228,
+        "curedCount": 229,
         "deadCount": 3,
         "comment": "",
         "locationId": 120000,
@@ -1295,9 +1295,9 @@
             {
                 "cityName": "境外输入",
                 "currentConfirmedCount": 7,
-                "confirmedCount": 101,
+                "confirmedCount": 102,
                 "suspectedCount": 0,
-                "curedCount": 94,
+                "curedCount": 95,
                 "deadCount": 0,
                 "locationId": 0
             },
@@ -1441,8 +1441,8 @@
     {
         "provinceName": "河南省",
         "provinceShortName": "河南",
-        "currentConfirmedCount": 3,
-        "confirmedCount": 1279,
+        "currentConfirmedCount": 4,
+        "confirmedCount": 1280,
         "suspectedCount": 0,
         "curedCount": 1254,
         "deadCount": 22,
@@ -1452,8 +1452,8 @@
         "cities": [
             {
                 "cityName": "境外输入",
-                "currentConfirmedCount": 3,
-                "confirmedCount": 6,
+                "currentConfirmedCount": 4,
+                "confirmedCount": 7,
                 "suspectedCount": 0,
                 "curedCount": 3,
                 "deadCount": 0,
