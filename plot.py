@@ -238,11 +238,11 @@ if __name__ == '__main__':
     plot.data.extend(brazil.plotData)
     print("Brazil: " + str(time.time() - start_time) + " seconds.")
 
-    start_time = time.time()
-    india = India()
-    addToMap(india.mapView, india.geo, True)
-    plot.data.extend(india.plotData)
-    print("India: " + str(time.time() - start_time) + " seconds.")
+    #start_time = time.time()
+    #india = India()
+    #addToMap(india.mapView, india.geo, True)
+    #plot.data.extend(india.plotData)
+    #print("India: " + str(time.time() - start_time) + " seconds.")
 
     plot.orderedCountries = []
     plot.mapView.sort(key=getPP, reverse=False)
