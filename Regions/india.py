@@ -29,7 +29,7 @@ class India:
             state = row1[0]
             pop = int(row1[5].replace(',', ''))
             self.population[state] = pop
-            for j in range(8, len(row1)):
+            for j in range(8, len(row1)-1):
                 dateStr = casesCsv.columns[7]
                 date = datetime.strptime(dateStr, '%m/%d/%Y')
 
