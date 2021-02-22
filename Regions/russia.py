@@ -50,9 +50,10 @@ class Russia:
         if state in self.statesByName:
             pop = self.statesByName[state]["population"]
             object["id"] = state
-            row = tools.getMapviewRow(state, self.lastDayCases[state], self.lastDayDeaths[state],
+            if state in self.totalCases and state in self.lastDayCases:
+                row = tools.getMapviewRow(state, self.lastDayCases[state], self.lastDayDeaths[state],
                                       self.totalCases[state], self.totalDeaths[state], pop)
-            self.mapView.append(row)
+                self.mapView.append(row)
             return True
 
         if state:  # is not null
